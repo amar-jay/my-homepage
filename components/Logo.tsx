@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { Text, useColorModeValue } from "@chakra-ui/react";
+import { Text, useColorModeValue, Box } from "@chakra-ui/react";
 import styled from "@emotion/styled";
+import NextImage from "next/image";
 
 const LogoBox = styled.div`
   font-weight: bold;
@@ -13,7 +14,7 @@ const LogoBox = styled.div`
   justify-content: center;
 
   &:hover img {
-    transform: rotate(-20deg) scale(1.3);
+    transform: rotate(-10deg) scale(1.05);
   }
 `;
 const Logos: React.FC = () => {
@@ -22,7 +23,18 @@ const Logos: React.FC = () => {
     <Link href="/">
       <a>
         <LogoBox>
-          {<img src={FootPrintImg} alt="" style={{ width: "16px" }} />}
+          <Box
+            position="relative"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            height="30px"
+            width="30px"
+            padding="10px 10px 10px 10px"
+            bg="glassTeal"
+          >
+            <NextImage src={FootPrintImg} alt="" layout="fill" />
+          </Box>
           <Text
             color={useColorModeValue("purple.700", "purple.300")}
             fontFamily="M PLUS Rounded 1c"
