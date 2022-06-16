@@ -11,7 +11,7 @@ const Main: React.FC<{
   return (
     <Box as="main" p={0}>
       <Head>
-        <title>Manan's Site</title>
+        <title>Manan Site</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Manan's Site" />
         <meta name="author" content="Abdel-manan Abdel-rahman" />
