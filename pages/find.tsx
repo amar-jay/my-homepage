@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const isPrime = (n: number) => {
   if (n <= 1) return false;
@@ -11,7 +11,7 @@ const isPrime = (n: number) => {
 };
 
 const findPrimes = (n: number) => {
-  const primes = [];
+  const primes: number[] = [];
   for (let i = 2; i <= n; i++) {
     if (isPrime(i)) {
       primes.push(i);
@@ -20,9 +20,9 @@ const findPrimes = (n: number) => {
   return primes;
 };
 
-const findPrimeNumbers = () => {
+const FindPrimeNumbers: React.FC = () => {
   const [n, setN] = useState(0);
-  const [primes, setPrimes] = useState([]);
+  const [primes, setPrimes] = useState<number[]>([]);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setN(Number(event.target.value));
@@ -53,4 +53,4 @@ const findPrimeNumbers = () => {
   );
 };
 
-export default findPrimeNumbers;
+export default FindPrimeNumbers;
