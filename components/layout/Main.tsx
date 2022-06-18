@@ -36,7 +36,7 @@ const Main: React.FC<{
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavBar path={router.asPath} m={1} />
+      <NavBar path={router.asPath} />
       <Container maxW="container.md" pt={14}>
         {children}
       </Container>

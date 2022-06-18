@@ -11,25 +11,31 @@ import {
   IconButton,
   Link,
   Flex,
-  HStack,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import { useColorModeValue } from "@chakra-ui/react";
 import Logo from "../Logo";
+import ThemeToggleButton from "../Theme-Toggle-Button";
 
 const LinkItem: React.FC<{
-  [elem: string]: any;
-}> = ({ href, path, children }) => {
+  href: string;
+  path: string;
+  children: string;
+  passHref?: boolean;
+  [prop: string]: any;
+}> = ({ href, path, children, passHref, ...props }) => {
   const active = path === href;
   const inactiveColor = useColorModeValue("purple.700", "purple.300");
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref={passHref}>
       <Link
+        {...props}
         p={3}
-        color={active ? "#202023" : inactiveColor}
+        m={"3px 0"}
+        color={active ? "#ffffff" : inactiveColor}
         fontWeight={active ? "bold" : "normal"}
-        bg={active ? "glassTeal" : ""}
+        bg={active ? "purple.700" : ""}
         borderRadius="lg"
         transition="all 0.2s ease-in-out"
         _hover={{
@@ -79,44 +85,76 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
           direction={{ base: "column", md: "row" }}
           display={{ base: "none", md: "flex" }}
           width={{ base: "full", md: "auto" }}
-          justifyContent="space-between"
+          // justifyContent="space-between"
           flexGrow={1}
           mt={{ base: 4, md: 0 }}
           alignItems="center"
         >
-          <LinkItem href={"/projects"} path={path}>
+          <LinkItem href={"/projects"} path={path} passHref>
             Projects
           </LinkItem>
-          <LinkItem href={"/posts"} path={path}>
+          <LinkItem href={"/"} path={path} passHref>
             Posts
           </LinkItem>
-          <LinkItem href={"/contact"} path={path}>
+          <LinkItem href={"/contact"} path={path} passHref>
             Contact
           </LinkItem>
         </Stack>
 
-        <Box flex={1} textAlign="right">
-          <Box>
+        <Box
+          flex={1}
+          justifyContent={"flex-end"}
+          alignItems={"center"}
+          flexDirection={"row"}
+          display="flex"
+        >
+          <ThemeToggleButton />
+          <Box
+            display={{
+              base: "block",
+              md: "none",
+            }}
+          >
             <Menu>
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
                 variant="outline"
-                aria-label="Menu"
+                aria-label="Outline"
               />
-              <MenuList>
-                <MenuItem as={Link}>
-                  <LinkItem href="https://www.github.com/amar-jay" passHref>
+              <MenuList p={"6px"}>
+                <MenuItem borderRadius={"10px"}>
+                  <LinkItem
+                    height={"full"}
+                    width={"full"}
+                    href="/projects"
+                    path={path}
+                    passHref
+                  >
                     Projects
                   </LinkItem>
                 </MenuItem>
-                <MenuItem as={Link}>
-                  <LinkItem href={"/posts"} passHref>
+                <MenuItem
+                  // as={Link}
+                  borderRadius={"10px"}
+                >
+                  <LinkItem
+                    height={"full"}
+                    width={"full"}
+                    href={"/"}
+                    path={path}
+                    passHref
+                  >
                     Posts
                   </LinkItem>
                 </MenuItem>
-                <MenuItem as={Link}>
-                  <LinkItem href={"/contact"} passHref>
+                <MenuItem borderRadius={"10px"}>
+                  <LinkItem
+                    href={"/contact"}
+                    path={path}
+                    height={"full"}
+                    width={"full"}
+                  >
                     Contact
                   </LinkItem>
                 </MenuItem>

@@ -31,7 +31,6 @@ const Logos: React.FC = () => {
             height="30px"
             width="30px"
             padding="10px 10px 10px 10px"
-            bg="glassTeal"
           >
             <NextImage src={FootPrintImg} alt="" layout="fill" />
           </Box>
