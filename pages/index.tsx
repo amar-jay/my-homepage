@@ -48,7 +48,7 @@ const Home: NextPage = () => {
           />
         </Box>
       </Box>
-      <Section delay={0.1}>
+      <Section delay="0.1">
         <Heading as="h3" variant="section-title" mt={{ base: 5, md: 10 }}>
           Work
         </Heading>
