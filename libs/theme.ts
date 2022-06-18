@@ -31,7 +31,7 @@ const components = {
 };
 
 const fonts = {
-  heading: "'Tahoma'",
+  heading: "'Nova Mono', 'Tahoma', monospace",
 };
 
 const colors = {
