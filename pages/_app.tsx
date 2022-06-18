@@ -8,7 +8,7 @@ import Fonts from "../components/Fonts";
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Fonts />
+      {/* <Fonts /> */}
       <MainLayout router={router}>
         <Component {...pageProps} key={router.route} />
       </MainLayout>
