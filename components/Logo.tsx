@@ -18,7 +18,10 @@ const LogoBox = styled.div`
   }
 `;
 const Logos: React.FC = () => {
-  const FootPrintImg = `/images/bulb${useColorModeValue("", "-dark")}.svg`;
+  const FootPrintImg = `/images/bulb${useColorModeValue(
+    "-light",
+    "-dark"
+  )}.svg`;
   return (
     <Link href="/">
       <a>

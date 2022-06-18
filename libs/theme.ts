@@ -15,8 +15,9 @@ const components = {
       "section-title": {
         textDecoration: "underline",
         fontSize: 28,
-        textUnderlineOffset: "#525252",
-        textDecorationThickness: 6,
+        textUnderlineOffset: "#9c27b0",
+        textDecorationColor: "#9c27b0",
+        textDecorationThickness: 7,
         marginTop: 3,
         marginBottom: 4,
       },

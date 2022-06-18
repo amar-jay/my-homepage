@@ -6,7 +6,7 @@ import {
   Image,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
-import NextImage from "next/image";
+import Section from "../components/Section";
 
 const Home: NextPage = () => {
   return (
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
           <Heading as="h2" variant="page-title">
             Amar Jay {useColorModeValue("🍀", "👿")}
           </Heading>
-          <p>A Maverick ( Solo Frontend Developer, Designer, Photographer ) </p>
+          <p>A Maverick ( Solo Frontend Dev, Designer, Photographer ) </p>
         </Box>
 
         <Box
@@ -48,6 +48,16 @@ const Home: NextPage = () => {
           />
         </Box>
       </Box>
+      <Section delay={0.1}>
+        <Heading as="h3" variant="section-title" mt={{ base: 5, md: 10 }}>
+          Work
+        </Heading>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus,
+          tempore enim eum omnis, aspernatur laboriosam sapiente hic alias unde
+          sint amet adipisci sit ut rerum architecto sunt iste ipsam maiores?
+        </p>
+      </Section>
     </Container>
   );
 };
