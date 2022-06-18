@@ -50,7 +50,30 @@ const Home: NextPage = () => {
       </Box>
       <Section delay="0.1">
         <Heading as="h3" variant="section-title" mt={{ base: 5, md: 10 }}>
+          Bio
+        </Heading>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ad
+          ipsa! Ratione esse perferendis veniam enim! Aliquam neque culpa ipsam
+          exercitationem itaque soluta voluptas. Ducimus dignissimos expedita
+          necessitatibus omnis culpa?
+        </p>
+      </Section>
+
+      <Section delay="0.1">
+        <Heading as="h3" variant="section-title" mt={{ base: 5, md: 10 }}>
           Work
+        </Heading>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus,
+          tempore enim eum omnis, aspernatur laboriosam sapiente hic alias unde
+          sint amet adipisci sit ut rerum architecto sunt iste ipsam maiores?
+        </p>
+      </Section>
+
+      <Section delay="0.1">
+        <Heading as="h3" variant="section-title" mt={{ base: 5, md: 10 }}>
+          Passions
         </Heading>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus,
