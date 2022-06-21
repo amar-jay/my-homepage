@@ -22,11 +22,20 @@ const components = {
         marginBottom: 4,
       },
     },
-    Link: {
-      baseStyle: (props: any) => ({
-        color: mode("#3d7aed", "#ff63c3")(props),
-        textUnderlineOffset: 3,
-      }),
+  },
+  BodyLink: {
+    marginTop: 3,
+    marginBottom: 4,
+    backgroundColor: "purple.500",
+  },
+  Link: {
+    variant: {
+      "stack-link": {
+        textDecoration: "none",
+        ":hover": {
+          textDecoration: "none",
+        },
+      },
     },
   },
 };

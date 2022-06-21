@@ -31,8 +31,9 @@ const LinkItem: React.FC<{
     <NextLink href={href} passHref={passHref}>
       <Link
         {...props}
-        p={3}
-        m={"3px 0"}
+        paddingY={4}
+        paddingX={4}
+        m={0.5}
         color={active ? "#ffffff" : inactiveColor}
         fontWeight={active ? "bold" : "normal"}
         bg={active ? "purple.700" : ""}
@@ -94,7 +95,7 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
             Projects
           </LinkItem>
           <LinkItem href={"/"} path={path} passHref>
-            Posts
+            Profile
           </LinkItem>
           <LinkItem href={"/contact"} path={path} passHref>
             Contact
@@ -123,7 +124,7 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
                 aria-label="Outline"
               />
               <MenuList p={"6px"}>
-                <MenuItem borderRadius={"10px"}>
+                <MenuItem borderRadius={"10px"} padding={0}>
                   <LinkItem
                     height={"full"}
                     width={"full"}
@@ -137,6 +138,7 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
                 <MenuItem
                   // as={Link}
                   borderRadius={"10px"}
+                  padding={0}
                 >
                   <LinkItem
                     height={"full"}
@@ -145,10 +147,10 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
                     path={path}
                     passHref
                   >
-                    Posts
+                    Profile
                   </LinkItem>
                 </MenuItem>
-                <MenuItem borderRadius={"10px"}>
+                <MenuItem borderRadius={"10px"} padding={0}>
                   <LinkItem
                     href={"/contact"}
                     path={path}
@@ -156,6 +158,26 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
                     width={"full"}
                   >
                     Contact
+                  </LinkItem>
+                </MenuItem>
+                <MenuItem borderRadius={"10px"} padding={0}>
+                  <LinkItem
+                    href={"/books"}
+                    path={path}
+                    height={"full"}
+                    width={"full"}
+                  >
+                    Books
+                  </LinkItem>
+                </MenuItem>
+                <MenuItem borderRadius={"10px"} padding={0}>
+                  <LinkItem
+                    href={"/photography"}
+                    path={path}
+                    height={"full"}
+                    width={"full"}
+                  >
+                    Photography
                   </LinkItem>
                 </MenuItem>
               </MenuList>

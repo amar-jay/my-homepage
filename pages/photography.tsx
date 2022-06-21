@@ -5,7 +5,7 @@ import Paragraph from "../components/layout/Paragraph";
 function contact() {
   return (
     <Box>
-      <Heading>❗Contact Page Not Acailable</Heading>
+      <Heading>❗Photography Page Not Acailable</Heading>
       <Paragraph>
         This website is still under production. You may return later 😁
       </Paragraph>
