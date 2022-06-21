@@ -5,7 +5,7 @@ import Section from "../components/Section";
 function books() {
   return (
     <Section delay="0.2s">
-      <Heading marginBottom={3}>❗Books Page Not Acailable</Heading>
+      <Heading marginBottom={3}>❗Books Page Not Available</Heading>
       <Paragraph>
         This website is still under production. You may return later 😁
       </Paragraph>

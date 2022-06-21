@@ -1,15 +1,18 @@
 import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
 import Paragraph from "../components/layout/Paragraph";
+import Section from "../components/Section";
 
 function photography() {
   return (
-    <Box>
-      <Heading>❗Photography Page Not Acailable</Heading>
+    <Section delay={"0.2"}>
+      <Heading textAlign={"center"} variant="section-title">
+        ❗Photography Page Not Available
+      </Heading>
       <Paragraph>
         This website is still under production. You may return later 😁
       </Paragraph>
-    </Box>
+    </Section>
   );
 }
 
