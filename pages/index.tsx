@@ -67,6 +67,7 @@ const Home: NextPage = () => {
             borderStyle="solid"
             width="100px"
             borderRadius={"50%"}
+            // cursor={"pointer"}
             height={"100px"}
             display="inline-block"
             src={`/images/profile.webp`}

@@ -2,7 +2,7 @@ import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
 import Paragraph from "../components/layout/Paragraph";
 
-function contact() {
+function photography() {
   return (
     <Box>
       <Heading>❗Photography Page Not Acailable</Heading>
@@ -13,4 +13,4 @@ function contact() {
   );
 }
 
-export default contact;
+export default photography;

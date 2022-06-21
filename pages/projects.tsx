@@ -2,7 +2,7 @@ import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
 import Paragraph from "../components/layout/Paragraph";
 
-function contact() {
+function projects() {
   return (
     <Box>
       <Heading>❗Projects Page Not Acailable</Heading>
@@ -13,4 +13,4 @@ function contact() {
   );
 }
 
-export default contact;
+export default projects;

@@ -45,7 +45,7 @@ const fonts = {
 };
 
 const colors = {
-  azure: "#f0ffff",
+  primary: "#9c27b0",
   voilet: "#6a0dab80",
 };
 
