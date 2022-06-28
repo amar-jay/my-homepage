@@ -35,7 +35,7 @@ const outerBoxStyles = {
 };
 const Card: React.FC = ({}) => {
   const [data, setData] = useState<DataStruct>({
-    data: { bio: "", followers: 0, following: 0 },
+    data: { name: "", bio: "", followers: 0, following: 0 },
   });
   useEffect(() => {
     fetch("/api/fetch")
@@ -52,7 +52,7 @@ const Card: React.FC = ({}) => {
         <Heading color="#fffffe" variant="page-title">
           GitHub Info
         </Heading>
-        <Heading as="h5" color="purple.700" textShadow={"0 0 5px white"}>
+        <Heading as="h5" color="purple.700" textShadow={"0 0 3px 1px #ccc"}>
           {data.data.name?.toString() ?? "unknown"}
         </Heading>
         <Flex
@@ -61,10 +61,16 @@ const Card: React.FC = ({}) => {
           alignItems={"center"}
           justifyContent={"center"}
         >
-          <Stat color={useColorModeValue("purple.600", "")} name="Followers">
+          <Stat
+            color={useColorModeValue("blue.600", "violet")}
+            name="followers"
+          >
             {data.data.followers?.toString() ?? "00"}
           </Stat>
-          <Stat name="Following" color={"#ffffff"}>
+          <Stat name="REPOS" color={"purple.500"}>
+            {data.repos?.length?.toString() ?? "00"}
+          </Stat>{" "}
+          <Stat name="following" color={"#ffffff"}>
             {data.data.following?.toString() ?? "00"}
           </Stat>
         </Flex>
