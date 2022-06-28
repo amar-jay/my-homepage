@@ -26,10 +26,7 @@ const Main: React.FC<{
         <meta property="og:site_name" content="Manan's Site" />
         <meta name="og:title" content="Abdel-manan A.R." />
         <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://avatars.githubusercontent.com/u/64834413"
-        />
+        <meta property="og:image" content="/dye-0.jpg" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
