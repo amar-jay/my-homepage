@@ -9,7 +9,7 @@ import Chakra from "../components/chakra";
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <Chakra cookies={pageProps.cookies}>
-      {!!Fonts && <Fonts />}
+      {/* {!!Fonts && <Fonts />} */}
       <MainLayout
         router={router}
         exitBeforeEnter
