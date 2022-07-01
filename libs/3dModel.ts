@@ -4,9 +4,9 @@ import { Group } from "three/src/Three";
 export function loadGLTFModel(
   scene: { add: (arg0: Group) => void },
   glbPath: string,
-  options = { receiveShadow: true, castShadow: true }
+  shadowOptions = { receiveShadow: true, castShadow: true }
 ) {
-  const { receiveShadow, castShadow } = options;
+  const { receiveShadow, castShadow } = shadowOptions;
   return new Promise((resolve, reject) => {
     const loader = new GLTFLoader();
 
@@ -15,8 +15,8 @@ export function loadGLTFModel(
       (gltf) => {
         const obj = gltf.scene;
         obj.name = "my-computer";
-        obj.position.y = 0;
-        obj.position.x = 0;
+        obj.position.y = 1;
+        obj.position.x = 1;
         obj.receiveShadow = receiveShadow;
         obj.castShadow = castShadow;
         scene.add(obj);

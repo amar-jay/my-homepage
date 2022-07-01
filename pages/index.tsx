@@ -123,8 +123,6 @@ const Home: NextPage = () => {
           importantly to make the world a better place
         </Paragraph>
       </Section>
-
-      <Footer />
     </Container>
   );
 };

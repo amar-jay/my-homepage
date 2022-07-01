@@ -2,7 +2,6 @@ import { Box, Container, Heading } from "@chakra-ui/react";
 import React from "react";
 import Paragraph from "../components/layout/Paragraph";
 import Section from "../components/SectionMotion";
-import loadObject from "../components/voxel-3d";
 function photography() {
   return (
     <>

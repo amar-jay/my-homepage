@@ -3,13 +3,14 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import { Router } from "next/router";
 import NavBar from "./NavBar";
-import VoxelPCLoader from "../voxel-3d-loader";
+import VoxelPCLoader from "../Voxel3d-Loader";
 import Footer from "./Footer";
 
-const LazyVoxelPC = dynamic(() => import("../voxel-3d"), {
+const LazyVoxelPC = dynamic(() => import("../Voxel3d"), {
   ssr: false,
   loading: () => <VoxelPCLoader />,
 });
+
 const Main: React.FC<{
   children: JSX.Element;
   router: Router;
@@ -39,7 +40,6 @@ const Main: React.FC<{
       <NavBar path={router.asPath} />
       <Container maxW="container.md" pt={16}>
         <LazyVoxelPC />
-
         {children}
 
         <Footer />

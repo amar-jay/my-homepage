@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { loadGLTFModel } from "../libs/3dModel";
-import { ObjectSpinner, ObjectContainer } from "./voxel-3d-loader";
+import { ObjectSpinner, ObjectContainer } from "./Voxel3d-Loader";
 
 function easeOutCirc(x: number) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
@@ -11,20 +11,18 @@ function easeOutCirc(x: number) {
 const VoxelObject = () => {
   const refContainer = useRef<HTMLElement>();
   const [loading, setLoading] = useState(true);
-  const [renderer, setRenderer] = useState<{
-    setSize: (scW: unknown, scH: unknown) => {};
-  }>();
-  const [_camera, setCamera] = useState();
+  const [renderer, setRenderer] = useState<THREE.WebGLRenderer>();
+  const [_camera, setCamera] = useState<THREE.OrthographicCamera>();
   const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0));
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       20 * Math.sin(0.2 * Math.PI),
-      10,
+      100,
       20 * Math.cos(0.2 * Math.PI)
     )
   );
   const [scene] = useState(new THREE.Scene());
-  const [_controls, setControls] = useState();
+  const [_controls, setControls] = useState<OrbitControls>();
 
   const handleWindowResize = useCallback(() => {
     const { current: container } = refContainer;
@@ -47,6 +45,7 @@ const VoxelObject = () => {
         antialias: true,
         alpha: true,
       });
+      renderer.info.autoReset = false;
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(scW, scH);
       renderer.outputEncoding = THREE.sRGBEncoding;
@@ -76,7 +75,7 @@ const VoxelObject = () => {
       controls.target = target;
       setControls(controls);
 
-      loadGLTFModel(scene, "/3d/scene.gltf", {
+      loadGLTFModel(scene, "/3d/dog.glb", {
         receiveShadow: false,
         castShadow: false,
       }).then(() => {
@@ -84,8 +83,8 @@ const VoxelObject = () => {
         setLoading(false);
       });
 
-      let req: number;
-      let frame = 0;
+      let req: number | null = null;
+      let frame: number = 0;
       const animate = () => {
         req = requestAnimationFrame(animate);
 
@@ -110,7 +109,7 @@ const VoxelObject = () => {
 
       return () => {
         console.log("unmount");
-        cancelAnimationFrame(req);
+        cancelAnimationFrame(req!);
         renderer.dispose();
       };
     }
@@ -128,8 +127,6 @@ const VoxelObject = () => {
       {loading && <ObjectSpinner />}
     </ObjectContainer>
   );
-
-  // return <h1> Hello yy</h1>;
 };
 
 export default VoxelObject;
