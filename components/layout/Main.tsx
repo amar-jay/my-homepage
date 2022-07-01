@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import VoxelPCLoader from "../Voxel3d-Loader";
 import Footer from "./Footer";
 
-const LazyVoxelPC = dynamic(() => import("../Voxel3d"), {
+const LazyVoxelPC = dynamic(() => import("../Voxel3d_1"), {
   ssr: false,
   loading: () => <VoxelPCLoader />,
 });

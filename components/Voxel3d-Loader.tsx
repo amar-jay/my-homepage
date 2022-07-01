@@ -12,11 +12,11 @@ export const ObjectSpinner = () => (
   />
 );
 
+/* eslint-disable react/display-name */
 export const ObjectContainer = forwardRef(
   ({ children }: { children: JSX.Element | false }, ref) => (
     <Box
       ref={ref as React.LegacyRef<HTMLDivElement>}
-      className="voxel-Object"
       m="auto"
       mt={["-20px", "-60px", "-120px"]}
       mb={["-40px", "-140px", "-200px"]}
