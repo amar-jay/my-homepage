@@ -37,7 +37,7 @@ const Card: React.FunctionComponent<{
       <Flex
         style={Boxstyle}
         direction={"column"}
-        bgColor={useColorModeValue("#ddd", "#111")}
+        bgColor={useColorModeValue("#aaa", "#111")}
         width={"20"}
         paddingX={3}
       >
