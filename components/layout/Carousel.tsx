@@ -1,10 +1,6 @@
 import { Box, Container, Heading, Image } from "@chakra-ui/react";
 import Carousel from "framer-motion-carousel";
 // import NextImage from "next/image";
-import fs from "fs/promises";
-import path from "path";
-import { cwd } from "process";
-import { useCallback, useEffect, useState } from "react";
 // const fetchImages = async () => {
 //   const files = await fs
 //     .readdir(path.join(cwd(), "/public/images/carousel"), "utf-8")
@@ -22,10 +18,10 @@ const App: React.FC<{ imageUrl: string[] }> = ({ imageUrl }) => {
     <>
       <Container paddingTop={3}>
         <Heading
-          as="h3"
+          as="h2"
           style={{
             textAlign: "center",
-            color: "#eee",
+            color: "#aaa",
             fontWeight: "bolder",
             padding: 6,
           }}
@@ -38,8 +34,8 @@ const App: React.FC<{ imageUrl: string[] }> = ({ imageUrl }) => {
               key={i}
               style={{
                 position: "relative",
-                width: "100vw",
-                height: "100vh",
+                width: 500,
+                height: 300,
               }}
             >
               <Image
@@ -47,6 +43,7 @@ const App: React.FC<{ imageUrl: string[] }> = ({ imageUrl }) => {
                 alt={item}
                 width={"100%"}
                 height={"100%"}
+                backgroundPosition={"center"}
               />
             </Box>
           ))}

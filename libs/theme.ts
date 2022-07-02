@@ -21,6 +21,15 @@ const components = {
         marginTop: 3,
         marginBottom: 4,
       },
+      "card-title": {
+        fontSize: 24,
+        marginLeft: 4,
+        marginY: 3,
+        color: "#9c27b0",
+        ":hover": {
+          color: "violet",
+        },
+      },
     },
   },
   BodyLink: {
