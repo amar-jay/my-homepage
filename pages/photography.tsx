@@ -1,18 +1,28 @@
-import { Box, Container, Heading } from "@chakra-ui/react";
-import React from "react";
-import Paragraph from "../components/layout/Paragraph";
-import Section from "../components/SectionMotion";
-function photography() {
-  return (
-    <>
-      <Section delay={"0.2"}>
-        <Heading textAlign={"center"} variant="section-title">
-          ❗Photography Page Not Available
-        </Heading>
-        <Container></Container>
-      </Section>
-    </>
-  );
-}
+import { Container, Heading } from "@chakra-ui/react";
+import { Main } from "@chakra-ui/react";
+import path from "path";
+import Carousel from "../components/layout/Carousel";
 
-export default photography;
+const globPath = "/images/carousel";
+let imagesURL = [
+  // "glassmorph",
+  // "dye-0",
+  // "dye-1",
+  "istanbul-0",
+  "istanbul-1",
+  "man-0",
+  "pattern-0",
+  // "pattern-1",
+  "pattern-2",
+];
+imagesURL = imagesURL.map((name) => path.join(globPath, name));
+const Photography: React.FunctionComponent = () => {
+  return (
+    <Container w={"100vw"}>
+      <Heading variant={"section-title"}>Carousel</Heading>
+      <Carousel imageUrl={imagesURL} />
+    </Container>
+  );
+};
+
+export default Photography;

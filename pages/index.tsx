@@ -17,7 +17,7 @@ import NextLink from "next/link";
 const Home: NextPage = () => {
   return (
     <Container paddingY={5}>
-      <Box
+      {/* <Box
         borderRadius="lg"
         bg={useColorModeValue("purple.700", "purple.300")}
         p={3}
@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       >
         Hello Welcome 😁!!. I am a software engineer currently living in
         Istanbul.
-      </Box>
+      </Box> */}
       <Box display={{ md: "flex" }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
@@ -119,8 +119,8 @@ const Home: NextPage = () => {
           myself. Challenges tempt me so much. Being creative and innovative is
           my hobby. I also like to <BodyLink link={""}>Watch Movies</BodyLink>,
           <BodyLink link={"/books"}> Read</BodyLink> and take{" "}
-          <BodyLink link={"/photography"}> Photographes</BodyLink>. But most
-          importantly to make the world a better place
+          <BodyLink link={"/photography"}> Photographs</BodyLink>. But most
+          importantly, to make the world a better place
         </Paragraph>
       </Section>
     </Container>
