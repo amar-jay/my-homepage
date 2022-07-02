@@ -10,7 +10,6 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import type { NextPage } from "next";
 import Section from "../components/SectionMotion";
 import Paragraph from "../components/layout/Paragraph";
-import Footer from "../components/layout/Footer";
 import BodyLink from "../components/layout/BodyLink";
 import NextLink from "next/link";
 
@@ -30,7 +29,7 @@ const Home: NextPage = () => {
       <Box display={{ md: "flex" }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
-            Amar Jay {useColorModeValue("🍀", "👿")}
+            Amar Jay {useColorModeValue("🤏", "👊")}
           </Heading>
           <p>A Maverick</p>
           <p>(Freelance Web Dev, Designer, Photographer) </p>

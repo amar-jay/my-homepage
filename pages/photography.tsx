@@ -1,5 +1,4 @@
 import { Container, Heading } from "@chakra-ui/react";
-import { Main } from "@chakra-ui/react";
 import path from "path";
 import Carousel from "../components/layout/Carousel";
 
