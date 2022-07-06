@@ -1,6 +1,6 @@
 import { Container, Heading } from "@chakra-ui/react";
 import path from "path";
-import Carousel from "../components/layout/Carousel";
+import Carousel from "../components/layout/SwiperCarousel";
 
 const globPath = "/images/carousel";
 let imagesURL = [
@@ -20,7 +20,7 @@ const Photography: React.FunctionComponent = () => {
   return (
     <Container w={"100vw"} paddingY={5}>
       <Heading variant={"section-title"}>Carousel</Heading>
-      <Carousel imageUrl={imagesURL} />
+      <Carousel slides={["Slide 1", "Slide 2", "Slide 3"]} />
     </Container>
   );
 };
