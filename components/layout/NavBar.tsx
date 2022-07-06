@@ -66,8 +66,8 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
           <LinkItem href={"/"} path={path} passHref>
             Profile
           </LinkItem>
-          <LinkItem href={"/contact"} path={path} passHref>
-            Davinci
+          <LinkItem href={"/ai"} path={path} passHref>
+            A.I.
           </LinkItem>{" "}
           <LinkItem href={"/contact"} path={path} passHref>
             Contact
@@ -141,17 +141,17 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
                   >
                     Books
                   </LinkItem>
-                  <MenuItem borderRadius={"10px"} padding={0}>
-                    <LinkItem
-                      href={"/ai/davinci"}
-                      path={path}
-                      height={"full"}
-                      width={"full"}
-                    >
-                      Open AI Davinci
-                    </LinkItem>
-                  </MenuItem>{" "}
                 </MenuItem>
+                <MenuItem borderRadius={"10px"} padding={0}>
+                  <LinkItem
+                    href={"/ai/davinci"}
+                    path={path}
+                    height={"full"}
+                    width={"full"}
+                  >
+                    Open AI Davinci
+                  </LinkItem>
+                </MenuItem>{" "}
                 <MenuItem borderRadius={"10px"} padding={0}>
                   <LinkItem
                     href={"/photography"}
