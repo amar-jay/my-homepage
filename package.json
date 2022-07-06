@@ -15,6 +15,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@types/three": "^0.141.0",
+    "@vitalets/google-translate-api": "^8.0.0",
     "formik": "^2.2.9",
     "framer-motion": "^6.3.11",
     "framer-motion-carousel": "^2.0.1",
