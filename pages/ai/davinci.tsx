@@ -31,7 +31,7 @@ export default function FormikExample() {
     const data = await res!.json();
     setResult(data.result);
   };
-  function validateName(value) {
+  function validateName(value: unknown) {
     let error;
     if (!value) {
       error = "Name is required";
@@ -54,7 +54,7 @@ export default function FormikExample() {
         {(props) => (
           <Form>
             <Field name="name" validate={validateName}>
-              {({ field, form }) => (
+              {({ field, form }: { [props: string]: any }) => (
                 <FormControl isInvalid={form.errors.name && form.touched.name}>
                   <FormLabel htmlFor="name">Question to Me</FormLabel>
                   <Input {...field} id="name" placeholder="name" />
