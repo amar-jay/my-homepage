@@ -4,6 +4,7 @@ import {
   Heading,
   useColorModeValue,
   Image,
+  Text,
   Button,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -31,8 +32,8 @@ const Home: NextPage = () => {
           <Heading as="h2" variant="page-title">
             Amar Jay {useColorModeValue("🤏", "👊")}
           </Heading>
-          <p>A Maverick</p>
-          <p>(Freelance Web Dev, Designer, Photographer) </p>
+          <Text>Abdel Manan</Text>
+          <Text>(Freelance Web Dev, Designer, Photographer) </Text>
         </Box>
 
         <Box
@@ -45,10 +46,10 @@ const Home: NextPage = () => {
             borderColor={useColorModeValue("purple.700", "purple.300")}
             borderWidth={3}
             borderStyle="solid"
-            width="100px"
+            width="210px"
             borderRadius={"50%"}
             // cursor={"pointer"}
-            height={"100px"}
+            height={"210px"}
             display="inline-block"
             src={`/images/profile.webp`}
             alt="Profile Image"

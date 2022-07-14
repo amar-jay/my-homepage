@@ -13,12 +13,12 @@ const VoxelObject = () => {
   const [loading, setLoading] = useState(true);
   const [renderer, setRenderer] = useState<THREE.WebGLRenderer>();
   const [_camera, setCamera] = useState<THREE.OrthographicCamera>();
-  const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0));
+  const [target] = useState(new THREE.Vector3(-0.5, 5, 0));
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       20 * Math.sin(0.2 * Math.PI),
-      100,
-      20 * Math.cos(0.2 * Math.PI)
+      -100,
+      -20 * Math.cos(0.2 * Math.PI)
     )
   );
   const [scene] = useState(new THREE.Scene());

@@ -4,10 +4,16 @@ import NextLink from "next/link";
 import "swiper/css";
 import "swiper/css/bundle";
 import { ReactNode } from "react";
-import { Navigation, Pagination, Scrollbar, A11y, Keyboard } from "swiper";
-import { Box, Button, Flex } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
-
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Keyboard,
+  Parallax,
+  Autoplay,
+} from "swiper";
+import { Flex } from "@chakra-ui/react";
 const DummyContainer: React.FC<{ children: string }> = ({ children }) => {
   return (
     <Flex
@@ -29,14 +35,23 @@ const SwiperComp: React.FC<{ slides: ReactNode[] }> = ({ slides }) => {
   return (
     <Swiper
       style={{ zIndex: 0 }}
-      modules={[Navigation, Pagination, Scrollbar, A11y, Keyboard]}
+      modules={[
+        Navigation,
+        Pagination,
+        Scrollbar,
+        A11y,
+        Keyboard,
+        Autoplay,
+        Parallax,
+      ]}
       spaceBetween={100}
+      autoplay={{delay: 3000}}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       keyboard={{ enabled: true }}
       slidesPerView={1}
-      onSlideChange={() => console.log("slideChange: ")}
-      onSwiper={(swiper) => console.log("Swiper: ", swiper)}
+    // onSlideChange={() => console.log("slideChange: ")}
+    // onSwiper={(swiper) => console.log("Swiper: ", swiper)}
       onReachEnd={() => {}}
     >
       {"PHOTOGRAPHY".split("").map((letter, i) => (
