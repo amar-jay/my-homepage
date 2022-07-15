@@ -28,8 +28,8 @@ const Home: NextPage = () => {
         Istanbul.
       </Box> */}
       <Box display={{ md: "flex" }}>
-        <Box flexGrow={1}>
-          <Heading as="h2" variant="page-title">
+        <Box flexGrow={1} alignItems={"center"}>
+          <Heading as="h1" variant="page-title">
             Amar Jay {useColorModeValue("🤏", "👊")}
           </Heading>
           <Text>Abdel Manan</Text>

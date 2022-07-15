@@ -18,10 +18,9 @@ const Main: React.FC<{
   return (
     <Box as="main" p={0}>
       <Head>
-        <title>Manan Website</title>
+        <title>Abdel-manan Abdel-rahman</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <meta name="description" content="Manan's Site" />
-        <meta name="author" content="Abdel-manan Abdel-rahman" />
+        <meta name="description" content="Abdel Manan's Site" />
         <meta name="author" content="Amar Jay" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link rel="shortcut icon" href="/bulb.svg" type="image/x-icon" />
