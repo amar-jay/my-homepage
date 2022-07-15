@@ -19,7 +19,7 @@ const IconContainer: React.FC<{
   return (
     <NextLink href={link}>
       <Box
-        display={{ md: "flex" }}
+        display={"flex"}
         alignItems={"center"}
         justifyContent={"center"}
         alignContent={"center"}
