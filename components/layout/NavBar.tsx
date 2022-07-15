@@ -60,18 +60,15 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
           mt={{ base: 4, md: 0 }}
           alignItems="center"
         >
-          <LinkItem href={"/projects"} path={path} passHref>
-            Projects
-          </LinkItem>
           <LinkItem href={"/"} path={path} passHref>
             Profile
+          </LinkItem>
+          <LinkItem href={"/projects"} path={path} passHref>
+            Projects
           </LinkItem>
           <LinkItem href={"/ai"} path={path} passHref>
             A.I.
           </LinkItem>{" "}
-          <LinkItem href={"/contact"} path={path} passHref>
-            Contact
-          </LinkItem>
         </Stack>
 
         <Box
@@ -100,26 +97,22 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
                   <LinkItem
                     height={"full"}
                     width={"full"}
-                    href="/projects"
-                    path={path}
-                    passHref
-                  >
-                    Projects
-                  </LinkItem>
-                </MenuItem>
-                <MenuItem
-                  // as={Link}
-                  borderRadius={"10px"}
-                  padding={0}
-                >
-                  <LinkItem
-                    height={"full"}
-                    width={"full"}
                     href={"/"}
                     path={path}
                     passHref
                   >
                     Profile
+                  </LinkItem>
+                </MenuItem>
+                <MenuItem borderRadius={"10px"} padding={0}>
+                  <LinkItem
+                    height={"full"}
+                    width={"full"}
+                    href="/projects"
+                    path={path}
+                    passHref
+                  >
+                    Projects
                   </LinkItem>
                 </MenuItem>
                 <MenuItem borderRadius={"10px"} padding={0}>

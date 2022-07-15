@@ -12,11 +12,12 @@ import type { NextPage } from "next";
 import Section from "../components/SectionMotion";
 import Paragraph from "../components/layout/Paragraph";
 import BodyLink from "../components/layout/BodyLink";
+import ContactContainer from "../components/layout/ContactContainer";
 import NextLink from "next/link";
 
 const Home: NextPage = () => {
   return (
-    <Container paddingY={5}>
+    <Container paddingY={5} minW={"60%"} maxW={"2xl"}>
       {/* <Box
         borderRadius="lg"
         bg={useColorModeValue("purple.700", "purple.300")}
@@ -28,7 +29,7 @@ const Home: NextPage = () => {
         Istanbul.
       </Box> */}
       <Box display={{ md: "flex" }}>
-        <Box flexGrow={1} alignItems={"center"}>
+        <Box flexGrow={1} alignItems={"center"} justifyContent={"center"}>
           <Heading as="h1" variant="page-title">
             Amar Jay {useColorModeValue("🤏", "👊")}
           </Heading>
@@ -73,17 +74,7 @@ const Home: NextPage = () => {
           </BodyLink>
           . I am an Art, Photography and Engineering enthusiast.
         </Paragraph>
-      </Section>
 
-      {/* create box <container  */}
-      <Box textAlign={"center"} my={4}>
-        <NextLink href={"/contact"} passHref scroll={false}>
-          <Button rightIcon={<ChevronRightIcon />} colorScheme={"facebook"}>
-            Reach Me
-          </Button>
-        </NextLink>
-      </Box>
-      <Section delay="0.1">
         <Heading as="h3" variant="section-title" mt={{ base: 5, md: 10 }}>
           Work
         </Heading>
@@ -107,9 +98,7 @@ const Home: NextPage = () => {
             </Button>
           </NextLink>
         </Box>
-      </Section>
 
-      <Section delay="0.1">
         <Heading as="h3" variant="section-title" mt={{ base: 5, md: 10 }}>
           Passions
         </Heading>
@@ -118,10 +107,11 @@ const Home: NextPage = () => {
           willing to encounter in order to both, help society, as well as
           myself. Challenges tempt me so much. Being creative and innovative is
           my hobby. I also like to <BodyLink link={""}>Watch Movies</BodyLink>,
-          <BodyLink link={"/books"}> Read</BodyLink> and take{" "}
+          <BodyLink link={""}> Read</BodyLink> and take{" "}
           <BodyLink link={"/photography"}> Photographs</BodyLink>. But most
           importantly, to make the world a better place
         </Paragraph>
+        <ContactContainer />
       </Section>
     </Container>
   );
