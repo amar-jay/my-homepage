@@ -57,7 +57,7 @@ function projects() {
         👨‍🏭 Works
       </Heading>
       <Container minW={{md: "full"}}>
-        {data?.repos.map((each) => (
+        {data?.repos.slice(0,7).map((each) => (
           <Card
             full_name={each.full_name}
             description={each.description}
