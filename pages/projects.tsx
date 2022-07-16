@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
   Box,
   Container,
@@ -7,7 +8,7 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import GithubInfoCard from "../components/layout/GithubInfoCard";
 import Section from "../components/SectionMotion";
 import { IData } from "./api/fetch";
@@ -59,6 +60,7 @@ function projects() {
       <Container minW={{md: "full"}}>
         {data?.repos.slice(0,7).map((each) => (
           <Card
+            key={each.full_name}
             full_name={each.full_name}
             description={each.description}
             created_at={each.created_at}
