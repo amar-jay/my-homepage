@@ -20,7 +20,7 @@ const innerBoxStyles = {
   paddingY: "15px",
   borderRadius: "15px",
   boxShadow: "md",
-  textShadow: "0 0 20px black",
+  // textShadow: "0 0 20px black",
   fontWeight: "bold",
   fontSize: "20px",
 };
