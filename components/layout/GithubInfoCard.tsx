@@ -8,7 +8,7 @@ import {
 import Stat from "./Stat";
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
-import { DataStruct } from "../../pages/api/fetch";
+import { IData } from "../../pages/api/fetch";
 
 const innerBoxStyles = {
   display: "flex",
@@ -31,17 +31,9 @@ const outerBoxStyles = {
   justifyContent: "center",
   borderRadius: "20px",
   p: "5px 5px",
-  background: "url(/images/glassmorph.jpg) center/cover no-repeat",
+  // background: "url(/images/glassmorph.jpg) center/cover no-repeat",
 };
-const Card: React.FC = ({}) => {
-  const [data, setData] = useState<DataStruct>({
-    data: { name: "", bio: "", followers: 0, following: 0 },
-  });
-  useEffect(() => {
-    fetch("/api/fetch")
-      .then((resp) => resp.json())
-      .then((data) => setData(data));
-  }, []);
+const Card: React.FC<{ data: IData["data"] }> = ({ data }) => {
   return (
     <Box sx={outerBoxStyles}>
       <Flex
@@ -53,7 +45,7 @@ const Card: React.FC = ({}) => {
           GitHub Info
         </Heading>
         <Heading as="h5" color="purple.700" textShadow={"0 0 3px 1px #ccc"}>
-          {data.data.name?.toString() ?? "unknown"}
+          {data.name?.toString() ?? "unknown"}
         </Heading>
         <Flex
           w={"100%"}
@@ -65,13 +57,13 @@ const Card: React.FC = ({}) => {
             color={useColorModeValue("blue.600", "violet")}
             name="followers"
           >
-            {data.data.followers?.toString() ?? "00"}
+            {data.followers?.toString() ?? "--"}
           </Stat>
           <Stat name="REPOS" color={"purple.500"}>
-            {data.repos?.length?.toString() ?? "00"}
+            {data.public_repos?.toString() ?? "--"}
           </Stat>{" "}
           <Stat name="following" color={"#ffffff"}>
-            {data.data.following?.toString() ?? "00"}
+            {data.following?.toString() ?? "--"}
           </Stat>
         </Flex>
       </Flex>

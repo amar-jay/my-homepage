@@ -1,41 +1,71 @@
-import { Container, Grid, GridItem, Heading } from "@chakra-ui/react";
-import React from "react";
-import Card from "../components/layout/Card";
+import {
+  Box,
+  Container,
+  Flex,
+  Grid,
+  GridItem,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
 import GithubInfoCard from "../components/layout/GithubInfoCard";
 import Section from "../components/SectionMotion";
+import { IData } from "./api/fetch";
+import NextLink from 'next/link'
+
+const Card: React.FC<IData["repos"][0]> = ({
+  created_at,
+  description,
+  full_name,
+  language,
+  updated_at,
+}) => (
+  <Flex
+    dir={"row"}
+    justifyContent={'space-between'}
+    backgroundColor={"blackAlpha.300"}
+    padding={5}
+    marginTop={7}
+    borderRadius={'lg'}
+    _hover={{ cursor: "pointer", backgroundColor: "blackAlpha.500", boxShadow: '#ccc' }}
+  >
+    <Box>
+      <NextLink href={'https://github.com/'+full_name} >
+      <Text fontSize={'3xl'}>{full_name.split('/')[1]}</Text>
+      </NextLink>
+      <Text fontSize={'md'}>{description}</Text>
+      <Text fontSize={'md'} color={'messenger.500'}>{language}</Text>
+    </Box>
+    <Box>
+      <Text>Created: {[new Date(created_at).getUTCDate(), new Date(created_at).getMonth(), new Date(created_at).getFullYear()].join("-")}</Text>
+      <Text>Last Updated: {[new Date(updated_at).getUTCDate(), new Date(updated_at).getUTCMonth(), new Date(updated_at).getFullYear()].join("-")}</Text>
+    </Box>
+  </Flex>
+);
 
 function projects() {
+  const [data, setData] = useState<IData>();
+  useEffect(() => {
+    fetch("/api/fetch")
+      .then((resp) => resp.json())
+      .then((data) => setData(data));
+  }, []);
   return (
     <Section delay="0.2">
-      <Heading variant={"section-title"}>👨‍🏭 Works</Heading>
-      <GithubInfoCard />
-      <Container pt={5}>
-        <Grid gap={3} gridColumn={2}>
-          <GridItem>
-            <Card
-              imgUrl="/images/carousel/movie-icon.jpg"
-              heading="Amar Movies"
-              desc="A free netflix-like app"
-              link={"https://amar-film-git-dev-amar-jay.vercel.app/"}
-            />
-          </GridItem>{" "}
-          <GridItem>
-            <Card
-              imgUrl="/images/carousel/movie-icon.jpg"
-              heading="Turkish Traslator"
-              desc="A turkish translation package"
-              link={"https://www.npmjs.org/turkish-translator"}
-            />
-          </GridItem>{" "}
-          <GridItem>
-            <Card
-              imgUrl="/images/carousel/movie-icon.jpg"
-              heading="Open Epub"
-              desc="Open of Epubs in Browser"
-              link="https://www.github.com/amar-jay/first-epub"
-            />
-          </GridItem>
-        </Grid>
+      <GithubInfoCard data={data?.data??{} as IData["data"]} />
+      <Heading variant={"section-title"} pt={5}>
+        👨‍🏭 Works
+      </Heading>
+      <Container minW={{md: "full"}}>
+        {data?.repos.map((each) => (
+          <Card
+            full_name={each.full_name}
+            description={each.description}
+            created_at={each.created_at}
+            language={each.language}
+            updated_at={each.updated_at}
+          />
+        ))}
       </Container>
     </Section>
   );
