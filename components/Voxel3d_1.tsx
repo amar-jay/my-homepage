@@ -122,7 +122,7 @@ const VoxelObject = () => {
     };
   }, [renderer, handleWindowResize]);
 
-  return <ObjectContainer>{loading && <ObjectSpinner />}</ObjectContainer>;
+  return <ObjectContainer ref={refContainer}>{loading && <ObjectSpinner />}</ObjectContainer>;
 };
 
 export default VoxelObject;
