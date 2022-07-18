@@ -18,17 +18,7 @@ import NextLink from "next/link";
 const Home: NextPage = () => {
   return (
     <Container paddingY={5} minW={"60%"} maxW={"2xl"}>
-      {/* <Box
-        borderRadius="lg"
-        bg={useColorModeValue("purple.700", "purple.300")}
-        p={3}
-        mb={6}
-        textAlign="center"
-      >
-        Hello Welcome 😁!!. I am a software engineer currently living in
-        Istanbul.
-      </Box> */}
-      <Box display={{ md: "flex" }}>
+     <Box display={{ md: "flex" }}>
         <Box flexGrow={1} alignItems={"center"} justifyContent={"center"}>
           <Heading as="h1" variant="page-title">
             Amar Jay {useColorModeValue("🤏", "👊")}
