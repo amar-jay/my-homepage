@@ -4,11 +4,12 @@ import NextLink from "next/link";
 const LinkItem: React.FC<{
   href: string;
   path?: string;
-  children: string;
+  isCurr?: boolean;
+  children: any;
   passHref?: boolean;
   [prop: string]: any;
-}> = ({ href, path, children, passHref, ...props }) => {
-  const active = path === href;
+}> = ({ href, path, children, passHref, isCurr, ...props }) => {
+  const active = path === href || isCurr;
   const inactiveColor = useColorModeValue("purple.700", "purple.300");
   const activeColor = useColorModeValue("#000", "#fff");
   return (
@@ -24,6 +25,7 @@ const LinkItem: React.FC<{
         transition="all 0.2s ease-in-out"
         _hover={{
           textDecoration: "none",
+          backgroundColor: "blackAlpha.300",
         }}
       >
         {children}
