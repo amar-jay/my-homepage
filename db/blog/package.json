@@ -5,7 +5,7 @@
   "description": "",
   "main": "package.json",
   "author": "amar-jay <abdelmanan.abdelrahman03@gmail.com>",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
     "build": "sanity build"
