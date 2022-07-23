@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Text, TypographyProps } from "@chakra-ui/react";
 import NextLink from "next/link";
 import React from "react";
 import { IconType } from "react-icons";
@@ -11,11 +11,12 @@ import {
   BsTwitter,
 } from "react-icons/bs";
 
-const IconContainer: React.FC<{
+export const IconContainer: React.FC<{
   Icon: IconType;
-  text: string;
+  text?: string;
+  size?: TypographyProps["fontSize"];
   link: string;
-}> = ({ Icon, text, link }) => {
+}> = ({ Icon, text, link, size }) => {
   return (
     <NextLink href={link}>
       <Box
@@ -26,7 +27,7 @@ const IconContainer: React.FC<{
         flexDirection={"column"}
         p={3}
         borderRadius={"md"}
-        fontSize={"xl"}
+        fontSize={size || "xl"}
         margin={{ base: 2, md: 1 }}
         _hover={{
           cursor: "pointer",
@@ -34,10 +35,9 @@ const IconContainer: React.FC<{
         }}
       >
         <Icon />
-        <Text mt={3} textAlign={"center"}>
-          {" "}
+        {text && <Text mt={3} textAlign={"center"}>
           {text}
-        </Text>
+        </Text>}
       </Box>
     </NextLink>
   );

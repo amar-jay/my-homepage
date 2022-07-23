@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import VoxelPCLoader from "../Voxel3d-Loader";
 import Footer from "./Footer";
 import React  from 'react';
-import { __prod } from "../../constants";
+import { __prod } from "../../../constants";
 //
 const MemoizedPCLoader = React.memo(VoxelPCLoader)
 const LazyVoxelPC = dynamic(() => import("../Voxel3d_1"), {

@@ -1,7 +1,8 @@
+import React from 'react'
 import { useState, useEffect, useRef, useCallback } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { loadGLTFModel } from "../libs/3dModel";
+import { loadGLTFModel } from "../../libs/3dModel";
 import { ObjectSpinner, ObjectContainer } from "./Voxel3d-Loader";
 
 function easeOutCirc(x: number) {
