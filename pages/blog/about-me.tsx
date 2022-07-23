@@ -1,7 +1,7 @@
 import { Container, Text, Heading } from "@chakra-ui/react";
 import Paragraph from "../../components/layout/Paragraph";
 import NextHead from "next/head";
-export default function () {
+export default function blog() {
   return (
     <Container>
       <NextHead>
