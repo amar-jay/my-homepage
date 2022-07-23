@@ -41,7 +41,7 @@ const Main: React.FC<{
 
       <NavBar path={router.asPath} />
       <Container maxW="container.md" pt={16}>
-    {/* <LazyVoxelPC /> */}
+       <LazyVoxelPC /> 
         {children}
 
         <Footer />

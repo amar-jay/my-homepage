@@ -20,6 +20,7 @@ export const ObjectContainer = forwardRef(
       m="auto"
       mb={["-20px", "-60px", "-120px"]}
       mt={["-40px", "-140px", "-200px"]}
+      minW="full"
       w={[280, 480, 640]}
       h={[280, 480, 640]}
       position="relative"
