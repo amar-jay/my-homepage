@@ -23,7 +23,7 @@ export default Article;
             slug: string
         }
     };
-export const getStaticPaths =async ({post}: {post:string}) => {
+export const getStaticPaths =async (_: {post:string}) => {
     let query = `*[_type == "post"][]{
   slug{
   current

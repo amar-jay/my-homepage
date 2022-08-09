@@ -1,16 +1,14 @@
 import {
-    // createImageUrlBuilder,
     createClient,
     createCurrentUserHook,
     ClientConfig,
 } from 'next-sanity'
-import { Url } from 'url';
 
     
 
 export const config = {
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-    projectId: process.env.NEXT_SANITY_PROJECT_ID!, //still get a type:string|undefined
+    projectId: process.env.NEXT_SANITY_PROJECT_ID || "xq2u3gyh", //fallback ProjectID
     apiVersion: 'v1',
     
 
@@ -24,7 +22,7 @@ export const config = {
 export const SanityClient = createClient(config);
 
 // get url of inage
-// export const urlOf = (source:string) => createImageUrlBuilder(config).image(source);
+//export const urlOf = (source:string) => createImageUrlBuilder(config).image(source);
 
 
-// export const useCurrentUser = createCurrentUserHook(config);
+export const useCurrentUser = createCurrentUserHook(config as  { projectId: string; dataset?: string | undefined; } )
