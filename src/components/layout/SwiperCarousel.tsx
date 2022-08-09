@@ -1,9 +1,8 @@
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import { get_random_color } from "../../libs/generateRandomColor";
-import NextLink from "next/link";
+import { get_random_color } from "../../../utils/generateRandomColor";
 import "swiper/css";
 import "swiper/css/bundle";
-import { ReactNode } from "react";
+import React from "react";
 import {
   Navigation,
   Pagination,
@@ -12,6 +11,7 @@ import {
   Keyboard,
   Parallax,
   Autoplay,
+  SwiperOptions,
 } from "swiper";
 import { Flex } from "@chakra-ui/react";
 const DummyContainer: React.FC<{ children: string }> = ({ children }) => {
@@ -31,7 +31,7 @@ const DummyContainer: React.FC<{ children: string }> = ({ children }) => {
     </Flex>
   );
 };
-const SwiperComp: React.FC<{ slides: ReactNode[] }> = ({ slides }) => {
+const SwiperComp: React.FC<{ slides: string[], scrollbar?: SwiperOptions["scrollbar"], pagination?: SwiperOptions["pagination"]}> = ({ slides, pagination, scrollbar }) => {
   return (
     <Swiper
       style={{ zIndex: 0 }}
@@ -46,8 +46,8 @@ const SwiperComp: React.FC<{ slides: ReactNode[] }> = ({ slides }) => {
       ]}
       spaceBetween={100}
       autoplay={{delay: 3000}}
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
+      pagination={pagination || { clickable: true }}
+      scrollbar={scrollbar || { draggable: true }}
       keyboard={{ enabled: true }}
       slidesPerView={1}
     // onSlideChange={() => console.log("slideChange: ")}

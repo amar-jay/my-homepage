@@ -35,7 +35,7 @@ const Home: NextPage = () => {
           textAlign="center"
         >
           <Image
-            borderColor={useColorModeValue("purple.700", "purple.300")}
+            borderColor={useColorModeValue("purple.700", "#395B64")}
             borderWidth={3}
             borderStyle="solid"
             width="210px"
@@ -84,7 +84,7 @@ const Home: NextPage = () => {
         </Paragraph>
         <Box textAlign={"center"} my={4}>
           <NextLink href={"/projects"} passHref scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme={"facebook"}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme={"whatsapp"}>
               Experience & Projects
             </Button>
           </NextLink>

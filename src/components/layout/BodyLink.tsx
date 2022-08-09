@@ -7,11 +7,11 @@ const BodyLink: React.FC<{ children: string; link: string }> = ({
 }) => (
   <NextLink href={link} passHref>
     <Link
-      color={useColorModeValue("#3d7aed", "violet")}
+      color={useColorModeValue("#3d7aed", "blue.500")}
       transition="all 0.2s ease-in-out"
       _hover={{
         textDecoration: "underline",
-        textDecorationColor: "#9c27b0",
+        textDecorationColor: "blue.900",
         textDecorationThickness: 3,
         textUnderlineOffset: 4,
       }}
