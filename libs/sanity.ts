@@ -8,7 +8,7 @@ import {
 
 export const config = {
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "website-blog",
-    projectId: process.env.NEXT_SANITY_PROJECT_ID || "xq2u3gyh", //fallback ProjectID
+   projectId: process.env.NEXT_SANITY_PROJECT_ID || "xq2u3gyh", //fallback ProjectID
     apiVersion: 'v1',
     
 
