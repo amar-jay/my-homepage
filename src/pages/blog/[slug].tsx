@@ -31,9 +31,15 @@ export const getStaticPaths =async ({post}: {post:string}) => {
 }`
   
     //querying 
-    const posts = await SanityClient.fetch(query);
+const posts = await SanityClient.fetch(query);
 
-    const paths: PathType= posts.map((post) => ({
+    interface IPost {
+      slug: {
+        current: any
+      }
+    }
+
+    const paths: PathType= posts.map((post: IPost) => ({
       params: {
         slug: post.slug.current
       }}))
@@ -42,7 +48,7 @@ export const getStaticPaths =async ({post}: {post:string}) => {
   
   }
 
-export const getStaticProps = async function({params}:PathType){
+export const getStaticProps = async function(_:PathType){
     const query = `*[_type == 'post'][]{
         title,
         slug,
