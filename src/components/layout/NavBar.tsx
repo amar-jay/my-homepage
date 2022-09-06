@@ -19,7 +19,7 @@ import { useColorModeValue } from "@chakra-ui/react";
 import Logo from "../Logo";
 import ThemeToggleButton from "../Theme-Toggle-Button";
 
-const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
+const NavBar: React.FC<{ path: string;[prop: string]: string | number }> = (
   props
 ) => {
   const { path } = props;
@@ -66,9 +66,12 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
           <LinkItem href={"/projects"} path={path} passHref>
             Projects
           </LinkItem>
-          <LinkItem href={"/blog"} path={path} passHref>
+          <LinkItem href={"https://blog.themanan.me"} path={path} passHref>
             Blog
-          </LinkItem>{" "}
+          </LinkItem>
+          <LinkItem href={"https://github.com/amar-jay/"} path={path} passHref>
+            Github
+          </LinkItem>
         </Stack>
 
         <Box
@@ -117,34 +120,25 @@ const NavBar: React.FC<{ path: string; [prop: string]: string | number }> = (
                 </MenuItem>
                 <MenuItem borderRadius={"10px"} padding={0}>
                   <LinkItem
-                    href={"/books"}
-                    path={path}
-                    height={"full"}
-                    width={"full"}
-                  >
-                    Books
-                  </LinkItem>
-                </MenuItem>
-                <MenuItem borderRadius={"10px"} padding={0}>
-                  <LinkItem
-                    href={"/blog"}
+                    href={"https://blog.themanan.me"}
                     path={path}
                     height={"full"}
                     width={"full"}
                   >
                     Blog
                   </LinkItem>
-                </MenuItem>{" "}
-                <MenuItem borderRadius={"10px"} padding={0}>
+                </MenuItem>
+                <MenuItem>
                   <LinkItem
-                    href={"/photography"}
+                    href={"https://github.com/amar-jay"}
                     path={path}
                     height={"full"}
                     width={"full"}
                   >
-                    Photography
+                    Github
                   </LinkItem>
                 </MenuItem>
+
               </MenuList>
             </Menu>
           </Box>
