@@ -20,7 +20,7 @@ const Home: NextPage = () => {
   return (
     <Container paddingTop={10}>
      <Box display={{ md: "flex" }}>
-        <Box flexGrow={1} alignItems={"center"} justifyContent={"center"}>
+       <Box flexGrow={1} alignItems={"center"} justifyContent={"center"}>
           <Heading as="h1" variant="page-title">
             Amar Jay {useColorModeValue("🤏", "👊")}
           </Heading>
@@ -83,7 +83,7 @@ const Home: NextPage = () => {
           <BodyLink link={"https://nodejs.org/"}>& Nodejs</BodyLink>
         </Paragraph>
         <Box textAlign={"center"} my={4}>
-          <NextLink href={"/projects"} passHref scroll={false}>
+          <NextLink href={"https://github.com/amar-jay/"} passHref scroll={false}>
             <Button rightIcon={<ChevronRightIcon />} colorScheme={"whatsapp"}>
               Experience & Projects
             </Button>
