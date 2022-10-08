@@ -53,7 +53,7 @@ export const fetchRepos = async () => {
 
 
 export default async function handler(
-  req: NextApiRequest,
+  _: NextApiRequest,
   res: NextApiResponse<any>
 ) {
     await fetchRepos();

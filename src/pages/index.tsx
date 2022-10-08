@@ -18,14 +18,14 @@ import NextLink from "next/link";
 
 const Home: NextPage = () => {
   return (
-    <Container paddingY={5} minW={"60%"} maxW={"2xl"}>
+    <Container paddingTop={10}>
      <Box display={{ md: "flex" }}>
         <Box flexGrow={1} alignItems={"center"} justifyContent={"center"}>
           <Heading as="h1" variant="page-title">
             Amar Jay {useColorModeValue("🤏", "👊")}
           </Heading>
           <Text>Abdel Manan</Text>
-          <Text>(Freelance Web Dev, Designer, Photographer) </Text>
+          <Text>( Web Dev, Student ) </Text>
         </Box>
 
         <Box
@@ -38,10 +38,10 @@ const Home: NextPage = () => {
             borderColor={useColorModeValue("purple.700", "#395B64")}
             borderWidth={3}
             borderStyle="solid"
-            width="210px"
+            width="175px"
             borderRadius={"50%"}
             // cursor={"pointer"}
-            height={"210px"}
+            height={"175px"}
             display="inline-block"
             src={`/images/profile.webp`}
             alt="Profile Image"

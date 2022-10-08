@@ -18,6 +18,8 @@ import NextLink from "next/link";
 import { SiGo,SiJavascript, SiTypescript, SiHtml5 } from "react-icons/si"
 import {RiFileUnknowFill} from 'react-icons/ri'
 import { IconType } from 'react-icons';
+import { __prod } from "../../constants";
+import { GetServerSideProps } from 'next';
 const Icon:React.FC<{language:string}> = ({language}) => {
   let Icon: IconType;
   switch (language) {
@@ -91,13 +93,8 @@ const Card: React.FC<IData["repos"][0]> = ({
   </Flex>
 );
 
-function projects() {
-  const [data, setData] = useState<IData>();
-  useEffect(() => {
-    fetch("/api/fetch")
-      .then((resp) => resp.json())
-      .then((data) => setData(data));
-  }, []);
+function projects({data}: {data: IData}) {
+
   return (
     <Section delay="0.2">
       <GithubInfoCard data={data?.data ?? ({} as IData["data"])} />
@@ -120,4 +117,17 @@ function projects() {
   );
 }
 
+export const getServerSideProps:GetServerSideProps = async ({req, res }) => {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=100, stale-while-revalidate=159'
+  )  
+  const url = __prod ? "https://www.themanan.me/api/fetch" : "http://localhost:3000/api/fetch"
+
+  const data:IData = await fetch(url).then((resp) => resp.json())
+
+  return {
+    props: { data },
+  }
+}
 export default projects;

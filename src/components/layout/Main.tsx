@@ -7,7 +7,7 @@ import VoxelPCLoader from "../Voxel3d-Loader";
 import Footer from "./Footer";
 import React  from 'react';
 import { __prod } from "../../../constants";
-//
+
 const MemoizedPCLoader = React.memo(VoxelPCLoader)
 const LazyVoxelPC = dynamic(() => import("../Voxel3d_1"), {
   ssr: false,
@@ -41,7 +41,7 @@ const Main: React.FC<{
 
       <NavBar path={router.asPath} />
       <Container maxW="container.md" pt={16}>
-    {__prod && <LazyVoxelPC /> }
+      {__prod && <LazyVoxelPC /> }
         {children}
 
         <Footer />

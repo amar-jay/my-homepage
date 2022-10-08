@@ -25,7 +25,7 @@ export const IconContainer: React.FC<{
         justifyContent={"center"}
         alignContent={"center"}
         flexDirection={"column"}
-        p={3}
+        p={2}
         borderRadius={"md"}
         fontSize={size || "xl"}
         margin={{ base: 2, md: 1 }}
