@@ -18,7 +18,7 @@ import NextLink from "next/link";
 
 const Home: NextPage = () => {
   return (
-    <Container paddingTop={10}>
+    <Container paddingTop={20}>
      <Box display={{ md: "flex" }}>
        <Box flexGrow={1} alignItems={"center"} justifyContent={"center"}>
           <Heading as="h1" variant="page-title">
