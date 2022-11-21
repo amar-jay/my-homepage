@@ -104,7 +104,7 @@ function projects({data}: {data: IData}) {
   );
 }
 
-export const getServerSideProps:GetServerSideProps = async ({req, res }) => {
+export const getServerSideProps:GetServerSideProps = async ({res }) => {
   res.setHeader(
     'Cache-Control',
     'public, s-maxage=100, stale-while-revalidate=159'
@@ -113,6 +113,11 @@ export const getServerSideProps:GetServerSideProps = async ({req, res }) => {
 
   const data:IData = await fetch(url).then((resp) => resp.json());   
 
+  if (!data) {
+    return {
+      notFound: true
+    }
+  }
   return {
     props: { data },
   }
