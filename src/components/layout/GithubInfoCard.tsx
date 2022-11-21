@@ -62,7 +62,9 @@ const Card: React.FC<{ data: IData["data"] }> = ({ data }) => {
           <Stat name="REPOS" color={"purple.500"}>
             {data.public_repos?.toString() ?? "--"}
           </Stat>{" "}
-          <Stat name="following" color={"#ffffff"}>
+          <Stat name="following" 
+	    color={useColorModeValue("#fff", "#07c")}
+	    >
             {data.following?.toString() ?? "--"}
           </Stat>
         </Flex>
