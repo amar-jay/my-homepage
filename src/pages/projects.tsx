@@ -4,12 +4,9 @@ import {
   Box,
   Container,
   Flex,
-  Grid,
-  GridItem,
   Heading,
   Text,
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
 import GithubInfoCard from "../components/layout/GithubInfoCard";
 import {IconContainer} from '../components/layout/ContactContainer'
 import Section from "../components/SectionMotion";
@@ -41,18 +38,23 @@ const Icon:React.FC<{language:string}> = ({language}) => {
   return <IconContainer Icon={Icon} link={"/"} size={'4xl'}/>
 }
 const Card: React.FC<IData["repos"][0]> = ({
-  created_at,
   description,
   full_name,
   language,
   updated_at,
-}) => (
+}) => {
+  const DESC_COLOR = "blackAlpha.800";
+  const formatted_text = full_name.split("/")[1].length > 10 ? full_name.split("/")[1].slice(0,10).concat("..."):full_name.split("/")[1];
+
+return (
+    <NextLink href={"https://github.com/" + full_name} >
   <Flex
   dir={"row"}
     justifyContent={"space-between"}
+    alignItems={"center"}
     backgroundColor={"blackAlpha.300"}
-    padding={5}
     marginTop={7}
+    paddingX={3}
     borderRadius={"lg"}
     _hover={{
       cursor: "pointer",
@@ -60,26 +62,12 @@ const Card: React.FC<IData["repos"][0]> = ({
       boxShadow: "#ccc",
     }}
   >
-    <NextLink href={"https://github.com/" + full_name} >
-      <>
       <Icon language={language}/>
       <Box alignItems={'left'} justifyContent={'left'} flex={1}>
-        <Text fontSize={"3xl"}>{full_name.split("/")[1]}</Text>
-        <Text fontSize={"md"}>{description}</Text>
-        <Text fontSize={"md"} color={"messenger.500"}>
-          {language}
-        </Text>
+        <Text fontSize={"2xl"}>{formatted_text}</Text>
+        <Text fontSize={"sm"} color={DESC_COLOR}>{description}</Text>
       </Box>
-      <Box>
-        <Text>
-          Created:{" "}
-          {[
-            new Date(created_at).getUTCDate(),
-            new Date(created_at).getMonth(),
-            new Date(created_at).getFullYear(),
-          ].join("-")}
-        </Text>
-        <Text>
+        <Text fontSize={"sm"} color={DESC_COLOR}>
           Last Updated:{" "}
           {[
             new Date(updated_at).getUTCDate(),
@@ -87,11 +75,10 @@ const Card: React.FC<IData["repos"][0]> = ({
             new Date(updated_at).getFullYear(),
           ].join("-")}
         </Text>
-      </Box>
-      </>
+      </Flex>
     </NextLink>
-  </Flex>
 );
+}
 
 function projects({data}: {data: IData}) {
 
@@ -124,7 +111,7 @@ export const getServerSideProps:GetServerSideProps = async ({req, res }) => {
   )  
   const url = __prod ? "https://www.themanan.me/api/fetch" : "http://localhost:3000/api/fetch"
 
-  const data:IData = await fetch(url).then((resp) => resp.json())
+  const data:IData = await fetch(url).then((resp) => resp.json());   
 
   return {
     props: { data },
