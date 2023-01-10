@@ -1,13 +1,10 @@
 import {
-  Box,
   Flex,
   Heading,
-  HStack,
   Image,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { CSSProperties } from "@emotion/serialize";
 import Link from "next/link";
 
 const Card: React.FunctionComponent<{

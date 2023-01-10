@@ -5,6 +5,7 @@ import {
   Container,
   Flex,
   Heading,
+  useColorModeValue,
   Text,
 } from "@chakra-ui/react";
 import GithubInfoCard from "../components/layout/GithubInfoCard";
@@ -44,7 +45,7 @@ const Card: React.FC<IData["repos"][0]> = ({
   updated_at,
 }) => {
   const DESC_COLOR = "blackAlpha.800";
-  const formatted_text = full_name.split("/")[1].length > 10 ? full_name.split("/")[1].slice(0,10).concat("..."):full_name.split("/")[1];
+  const formatted_text = full_name.split("/")[1].length > 20 ? full_name.split("/")[1].slice(0,20).concat("..."):full_name.split("/")[1];
 
 return (
     <NextLink href={"https://github.com/" + full_name} >
@@ -52,28 +53,28 @@ return (
   dir={"row"}
     justifyContent={"space-between"}
     alignItems={"center"}
-    backgroundColor={"blackAlpha.300"}
+    backgroundColor={"white"}
+    opacity={0.9}
     marginTop={7}
-    paddingX={3}
+    paddingX={1}
     borderRadius={"lg"}
     _hover={{
       cursor: "pointer",
-      backgroundColor: "blackAlpha.500",
-      boxShadow: "#ccc",
+      backgroundColor: useColorModeValue("blackAlpha.200", "blackAlpha.400"),
+      //boxShadow: "#ccc",
     }}
   >
       <Icon language={language}/>
       <Box alignItems={'left'} justifyContent={'left'} flex={1}>
-        <Text fontSize={"2xl"}>{formatted_text}</Text>
-        <Text fontSize={"sm"} color={DESC_COLOR}>{description}</Text>
+        <Text fontSize={"lg"}>{formatted_text}</Text>
+	{description && <Text fontSize={"sm"} color={DESC_COLOR}>{description}</Text>}
       </Box>
         <Text fontSize={"sm"} color={DESC_COLOR}>
-          Last Updated:{" "}
           {[
             new Date(updated_at).getUTCDate(),
             new Date(updated_at).getUTCMonth(),
-            new Date(updated_at).getFullYear(),
-          ].join("-")}
+            new Date(updated_at).getFullYear().toString().slice(2),
+          ].join("/")}
         </Text>
       </Flex>
     </NextLink>
@@ -85,7 +86,7 @@ function projects({data}: {data: IData}) {
   return (
     <Section delay="0.2">
       <GithubInfoCard data={data?.data ?? ({} as IData["data"])} />
-      <Heading variant={"section-title"} pt={5}>
+      <Heading variant={"section-title"} pt={5} mb={5}>
         👨‍🏭 Works
       </Heading>
       <Container minW={{ md: "full" }}>
