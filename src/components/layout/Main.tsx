@@ -5,10 +5,11 @@ import { Router } from "next/router";
 import NavBar from "./NavBar";
 import VoxelPCLoader from "../Voxel3d-Loader";
 import Footer from "./Footer";
-import React  from 'react';
+import React from "react";
 import { __prod } from "../../../constants";
+import Fonts from "../Fonts";
 
-const MemoizedPCLoader = React.memo(VoxelPCLoader)
+const MemoizedPCLoader = React.memo(VoxelPCLoader);
 const LazyVoxelPC = dynamic(() => import("../Voxel3d_1"), {
   ssr: false,
   loading: () => <MemoizedPCLoader />,
@@ -21,7 +22,7 @@ const Main: React.FC<{
   return (
     <Box as="main" p={0}>
       <Head>
-        <title>Abdel-manan Abdel-rahman</title>
+        <title>(amar jay) Abdel-manan Abdel-rahman</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="Abdel Manan's Site" />
         <meta name="author" content="Amar Jay" />
@@ -37,11 +38,13 @@ const Main: React.FC<{
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/dye-0.jpg" />
         <link rel="icon" href="/favicon.ico" />
+
+        {!!Fonts && <Fonts />}
       </Head>
 
       <NavBar path={router.asPath} />
       <Container maxW="container.md" pt={16}>
-      {__prod && <LazyVoxelPC /> }
+        {__prod && <LazyVoxelPC />}
         {children}
 
         <Footer />
