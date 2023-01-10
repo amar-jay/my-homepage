@@ -53,7 +53,7 @@ return (
   dir={"row"}
     justifyContent={"space-between"}
     alignItems={"center"}
-    backgroundColor={"white"}
+    //backgroundColor={"white"}
     opacity={0.9}
     marginTop={7}
     paddingX={1}
@@ -61,7 +61,7 @@ return (
     _hover={{
       cursor: "pointer",
       backgroundColor: useColorModeValue("blackAlpha.200", "blackAlpha.400"),
-      //boxShadow: "#ccc",
+      boxShadow: useColorModeValue("blackAlpha.400", "blackAlpha.200")
     }}
   >
       <Icon language={language}/>
@@ -89,7 +89,7 @@ function projects({data}: {data: IData}) {
       <Heading variant={"section-title"} pt={5} mb={5}>
         👨‍🏭 Works
       </Heading>
-      <Container minW={{ md: "full" }}>
+      <Container minW={{ md: "full" }} mb={10}>
         {data?.repos.map((each) => (
           <Card
             key={each.full_name}
