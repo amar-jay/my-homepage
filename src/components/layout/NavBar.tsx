@@ -71,7 +71,7 @@ const NavBar: React.FC<{ path: string;[prop: string]: string | number }> = (
             Socials
           </LinkItem>
 	*/}
-          <LinkItem href={"https://blog.themanan.me"} path={path} passHref>
+          <LinkItem href={"https://blog.themanan.me/blog"} path={path} passHref>
             Blog
           </LinkItem>
           <LinkItem href={"https://github.com/amar-jay/"} path={path} passHref>
