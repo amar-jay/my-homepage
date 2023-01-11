@@ -1,5 +1,5 @@
-import Section from "../components/SectionMotion";
-import LinkItem from "../components/layout/LinkItem";
+import Section from "../../components/SectionMotion";
+import LinkItem from "../../components/layout/LinkItem";
 import { Flex, Heading } from "@chakra-ui/react";
 const ai = () => {
   return (

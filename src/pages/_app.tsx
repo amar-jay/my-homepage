@@ -8,7 +8,6 @@ import { AnimatePresence } from "framer-motion";
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <Chakra cookies={pageProps.cookies}>
-      {/* {!!Fonts && <Fonts />} */}
       <MainLayout router={router}>
         <AnimatePresence
           exitBeforeEnter

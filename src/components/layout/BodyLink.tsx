@@ -1,7 +1,7 @@
-import { Link, useColorModeValue } from "@chakra-ui/react";
+import { Link, useColorModeValue, Text } from "@chakra-ui/react";
 import NextLink from "next/link";
 
-const BodyLink: React.FC<{ children: string; link: string }> = ({
+const BodyLink: React.FC<{ children: React.ReactNode; link: string }> = ({
   children,
   link,
 }) => (
