@@ -25,7 +25,7 @@ const Home: NextPage = () => {
       <Box display={{ md: "flex" }}>
         <Box flexGrow={1} alignItems={"center"} justifyContent={"center"}>
           <Heading as="h1" variant="page-title">
-            Amar Jay {useColorModeValue("🤏", "👊")}
+            Amar Jay {useColorModeValue("🙃", "🙂")}
           </Heading>
           <Text>Abdel Manan</Text>
           <Text>(Software Dev, Student ) </Text>
