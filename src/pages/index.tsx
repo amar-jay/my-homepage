@@ -115,7 +115,9 @@ const Home: NextPage = () => {
               />
             </ListItem>
             <ListItem>
-              <IconContainer isRow Icon={BiBook} text={"Reading"} link={"/"} />
+              <IconContainer isRow
+		Icon={BiBook} text={"Reading"} 
+		link={"https://links.themanan.me/goodread"} />
             </ListItem>
             <ListItem>
               <IconContainer
