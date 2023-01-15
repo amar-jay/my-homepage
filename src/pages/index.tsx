@@ -111,7 +111,7 @@ const Home: NextPage = () => {
                 isRow
                 Icon={BiMoviePlay}
                 text={"Movies"}
-                link={"/"}
+                link={"https://links.themanan.me/movies"}
               />
             </ListItem>
             <ListItem>
