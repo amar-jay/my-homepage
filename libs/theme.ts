@@ -12,8 +12,9 @@ const styles = {
 
 export const colors = {
   primary: "#A5C9CA",
-  voilet: "#E7F6F2",
+  voilet: "#A020F0",
   bgDark: "#2C3333",
+  secondary: "#35793A"
 };
 
 const components = {
@@ -25,7 +26,7 @@ const components = {
 //        textUnderlineOffset: [0, 7],
         textDecorationThickness: 4,
         fontSize: 28,
-        color: mode(colors.voilet, colors.primary), //"#35793A",
+        color: mode(colors.voilet, colors.primary), //,
         marginTop: 3,
         marginBottom: 4,
       },
@@ -60,7 +61,7 @@ const components = {
 };
 
 const fonts = {
-  heading: "'Nova Mono', 'Tahoma', monospace",
+  heading: "'Kanit', 'Nova Mono', 'Tahoma', monospace, sans-serif",
 };
 
 const config = {

@@ -143,7 +143,7 @@ const Home: NextPage = () => {
             passHref
             scroll={false}
           >
-            <Button rightIcon={<ChevronRightIcon />} colorScheme={"telegram"}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme={"purple"}>
               Open-source Projects
             </Button>
           </NextLink>
@@ -201,7 +201,7 @@ const Home: NextPage = () => {
             }
         <Box textAlign={"center"} my={4}>
           <NextLink href={data.links.linktree} passHref scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme={"telegram"}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme={"purple"}>
               Reach me on
             </Button>
           </NextLink>
