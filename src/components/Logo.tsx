@@ -24,7 +24,6 @@ const Logos: React.FC = () => {
   )}.svg`;
   return (
     <Link href="/">
-      <a>
         <LogoBox>
           <Box
             position="relative"
@@ -46,7 +45,6 @@ const Logos: React.FC = () => {
             Amar Jay
           </Text>
         </LogoBox>
-      </a>
     </Link>
   );
 };

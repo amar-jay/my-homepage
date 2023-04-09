@@ -13,7 +13,7 @@ import { IconContainer } from "../components/layout/IconContainer";
 import Section from "../components/SectionMotion";
 import { IData } from "./api/fetch";
 import NextLink from "next/link";
-import { SiGo, SiJavascript, SiTypescript, SiHtml5 } from "react-icons/si";
+import { SiRust, SiGo, SiJavascript, SiTypescript, SiHtml5 } from "react-icons/si";
 import { RiFileUnknowFill } from "react-icons/ri";
 import { IconType } from "react-icons";
 import { __prod } from "../../constants";
@@ -23,6 +23,9 @@ const Icon: React.FC<{ language: string }> = ({ language }) => {
   switch (language) {
     case "TypeScript":
       Icon = SiTypescript;
+      break;
+    case "Rust":
+      Icon = SiRust;
       break;
     case "JavaScript":
       Icon = SiJavascript;

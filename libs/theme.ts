@@ -13,11 +13,12 @@ const components = {
   Heading: {
     variants: {
       "section-title": {
-        textDecoration: "underline",
-        fontSize: 25,
-        textUnderlineOffset: [0, 7],
-        textDecorationColor: "#395B64",
+//       textDecoration: "underline",
+//        textDecorationColor: "#395B64",
         textDecorationThickness: 4,
+//        textUnderlineOffset: [0, 7],
+        fontSize: 28,
+        color: "#35793A",
         marginTop: 3,
         marginBottom: 4,
       },
@@ -27,7 +28,7 @@ const components = {
         marginY: 3,
         color: "#395B64",
         ":hover": {
-          color: "#A5C9CA",
+          color: "#35393A",
         },
       },
     },
@@ -50,7 +51,7 @@ const components = {
 };
 
 const fonts = {
-  heading: "'Nova Mono', 'Tahoma', monospace",
+  heading: "'Tahoma', 'Nova Mono', monospace",
 };
 
 const colors = {

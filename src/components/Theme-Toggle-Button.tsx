@@ -11,6 +11,7 @@ type ThemeModeTogglerProps = Omit<IconButtonProps, "aria-label">;
 
 const ThemeToggleButton: React.FC<ThemeModeTogglerProps> = (props) => {
   const { toggleColorMode } = useColorMode();
+  console.log(JSON.stringify(useColorMode()));
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon);
 
   return (
