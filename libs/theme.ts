@@ -4,7 +4,7 @@ import { mode } from "@chakra-ui/theme-tools";
 const styles = {
   global: (props: any) => ({
     body: {
-      bg: mode("#f0e7db", "#2C3333")(props),
+      bg: mode("#f0e7db", colors.bgDark)(props),
     },
   }),
 };
@@ -13,6 +13,7 @@ const styles = {
 export const colors = {
   primary: "#A5C9CA",
   voilet: "#E7F6F2",
+  bgDark: "#2C3333",
 };
 
 const components = {
@@ -24,7 +25,7 @@ const components = {
 //        textUnderlineOffset: [0, 7],
         textDecorationThickness: 4,
         fontSize: 28,
-        color: colors.primary, //"#35793A",
+        color: mode(colors.voilet, colors.primary), //"#35793A",
         marginTop: 3,
         marginBottom: 4,
       },
@@ -59,7 +60,7 @@ const components = {
 };
 
 const fonts = {
-  heading: "'Tahoma', 'Nova Mono', monospace",
+  heading: "'Nova Mono', 'Tahoma', monospace",
 };
 
 const config = {

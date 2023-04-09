@@ -34,6 +34,15 @@ const data = {
         href: "https://www.marmara.edu.tr/en"
         }
     ],
+    links: {
+        github: "https://github.com/amar-jay",
+        linkedin: "https://www.linkedin.com/in/amar-jay/",
+        linktree: "https://linktr.ee/amarjay",
+        medium: "https://amanann.medium.com",
+        goodread: "https://links.themanan.me/goodread",
+        spotify: "https://open.spotify.com/playlist/04svBjcoYd5Ou6q2h47sBR",
+        movies: "https://links.themanan.me/movies",
+    }
     }
 const Home: NextPage = () => {
   return (
@@ -72,7 +81,7 @@ const Home: NextPage = () => {
           Hi,
         </Heading>
         <Paragraph>
-        I am a young and passionate individual with a deep interest in entrepreneurship, software development, and artificial intelligence. I believe that success requires adaptability and learning from mistakes, which is why I approach every project with humility and a hunger for fresh perspectives.
+        I am a young and passionate individual with a deep interest in entrepreneurship and software development. I believe that success requires adaptability and learning from mistakes, which is why I approach every project with humility and a hunger for fresh perspectives.
         </Paragraph>
         <Paragraph>
         Beyond my professional pursuits, I am a caring and empathetic individual who cherishes my relationships with family and friends. I take pride in connecting with others on a personal level and making a positive impact in their lives, whether it{"'"}s through sharing knowledge and support or simply being there for them.
@@ -130,12 +139,12 @@ const Home: NextPage = () => {
         */}
         <Box textAlign={"center"} my={4}>
           <NextLink
-            href={"https://github.com/amar-jay/"}
+            href={data.links.github}
             passHref
             scroll={false}
           >
-            <Button rightIcon={<ChevronRightIcon />} colorScheme={"whatsapp"}>
-              Experience & Projects
+            <Button rightIcon={<ChevronRightIcon />} colorScheme={"telegram"}>
+              Open-source Projects
             </Button>
           </NextLink>
         </Box>
@@ -146,7 +155,7 @@ const Home: NextPage = () => {
           mb={5}
           mt={{ base: 5, md: 15 }}
         >
-          Passions
+         Hobbies 
         </Heading>
         <Paragraph>
           <UnorderedList listStyleType={"none"}>
@@ -155,20 +164,20 @@ const Home: NextPage = () => {
                 isRow
                 Icon={BiMoviePlay}
                 text={"Movies"}
-                link={"https://links.themanan.me/movies"}
+                link={data.links.movies}
               />
             </ListItem>
             <ListItem>
               <IconContainer isRow
 		Icon={BiBook} text={"Reading"} 
-		link={"https://links.themanan.me/goodread"} />
+		link={data.links.goodread} />
             </ListItem>
             <ListItem>
               <IconContainer
                 isRow
                 Icon={BiPen}
                 text={"Writing"}
-                link={"https://amanann.medium.com"}
+                link={data.links.medium}
               />
             </ListItem>
             <ListItem>
@@ -177,7 +186,7 @@ const Home: NextPage = () => {
                 Icon={BiMusic}
                 text={"Music"}
                 link={
-                  "https://open.spotify.com/playlist/04svBjcoYd5Ou6q2h47sBR"
+                  data.links.spotify
                 }
               />
             </ListItem>
@@ -191,8 +200,8 @@ const Home: NextPage = () => {
              * */
             }
         <Box textAlign={"center"} my={4}>
-          <NextLink href={"https://linktr.ee/amar-jay"} passHref scroll={false}>
-            <Button rightIcon={<ChevronRightIcon />} colorScheme={"whatsapp"}>
+          <NextLink href={data.links.linktree} passHref scroll={false}>
+            <Button rightIcon={<ChevronRightIcon />} colorScheme={"telegram"}>
               Reach me on
             </Button>
           </NextLink>
