@@ -9,16 +9,22 @@ const styles = {
   }),
 };
 
+
+export const colors = {
+  primary: "#A5C9CA",
+  voilet: "#E7F6F2",
+};
+
 const components = {
   Heading: {
     variants: {
       "section-title": {
 //       textDecoration: "underline",
 //        textDecorationColor: "#395B64",
-        textDecorationThickness: 4,
 //        textUnderlineOffset: [0, 7],
+        textDecorationThickness: 4,
         fontSize: 28,
-        color: "#35793A",
+        color: colors.primary, //"#35793A",
         marginTop: 3,
         marginBottom: 4,
       },
@@ -26,9 +32,11 @@ const components = {
         fontSize: 24,
         marginLeft: 4,
         marginY: 3,
-        color: "#395B64",
+        opacity: .8,
+        color: colors.primary,//"#395B64",
         ":hover": {
-          color: "#35393A",
+          opacity: 1,
+//          color: "#35393A",
         },
       },
     },
@@ -54,14 +62,9 @@ const fonts = {
   heading: "'Tahoma', 'Nova Mono', monospace",
 };
 
-const colors = {
-  primary: "#A5C9CA",
-  voilet: "#E7F6F2",
-};
-
 const config = {
-  initialColorMode: "dark",
-  useSystemColorMode: true,
+  initialColorMode: 'dark', // 'dark' | 'light'
+  useSystemColorMode: false,
 };
 
 const theme = extendTheme({

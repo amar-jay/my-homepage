@@ -10,8 +10,8 @@ const LinkItem: React.FC<{
   [prop: string]: any;
 }> = ({ href, path, children, passHref, isCurr, ...props }) => {
   const active = path === href || isCurr;
-  const inactiveColor = useColorModeValue("purple.700", "#395B64");
-  const activeColor = useColorModeValue("#000", "#E7F6F2");
+//  const inactiveColor = useColorModeValue("purple.700", "#395B64");
+//  const activeColor = useColorModeValue("#000", "#E7F6F2");
   return (
     <NextLink href={href} passHref={passHref}>
       <Link
@@ -19,7 +19,7 @@ const LinkItem: React.FC<{
         paddingY={4}
         paddingX={4}
         m={0.5}
-        color={active ? activeColor : inactiveColor}
+        //color={active ? activeColor : inactiveColor}
         fontWeight={active ? "bold" : "normal"}
         borderRadius="lg"
         transition="all 0.2s ease-in-out"

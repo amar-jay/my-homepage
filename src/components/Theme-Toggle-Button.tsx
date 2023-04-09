@@ -10,16 +10,19 @@ import SunIcon from "./Icons/SunIcon";
 type ThemeModeTogglerProps = Omit<IconButtonProps, "aria-label">;
 
 const ThemeToggleButton: React.FC<ThemeModeTogglerProps> = (props) => {
-  const { toggleColorMode } = useColorMode();
-  console.log(JSON.stringify(useColorMode()));
+  const { toggleColorMode, ...x } = useColorMode();
   const SwitchIcon = useColorModeValue(MoonIcon, SunIcon);
+  const res = JSON.stringify(useColorMode());
 
   return (
     <IconButton
       aria-label="toggle-button"
       fontSize="1xl"
       variant="ghost"
-      onClick={() => toggleColorMode()}
+      onClick={() => {
+          console.log(res);
+        toggleColorMode();
+      }}
       icon={<SwitchIcon />}
       padding={3}
       borderColor={"whiteAlpha.500"}

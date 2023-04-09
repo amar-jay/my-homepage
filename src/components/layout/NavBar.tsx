@@ -18,6 +18,7 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import { useColorModeValue } from "@chakra-ui/react";
 import Logo from "../Logo";
 import ThemeToggleButton from "../Theme-Toggle-Button";
+import { colors } from "../../../libs/theme";
 
 const NavBar: React.FC<{ path: string;[prop: string]: string | number }> = (
   props
@@ -29,7 +30,7 @@ const NavBar: React.FC<{ path: string;[prop: string]: string | number }> = (
       position="fixed"
       as="nav"
       w="100%"
-      bg={useColorModeValue("#ffffff40", "#2C3333")}
+      bg={useColorModeValue("#ffffff40", colors.primary + "40")}
       zIndex={1}
       style={{ backdropFilter: "blur(10px)" }}
       {...props}
