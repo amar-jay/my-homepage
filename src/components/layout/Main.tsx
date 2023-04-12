@@ -1,9 +1,10 @@
 import { Box, Container } from "@chakra-ui/react";
+import { Suspense } from  'react';
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import { Router } from "next/router";
 import NavBar from "./NavBar";
-import VoxelPCLoader from "../Voxel3d-Loader";
+import VoxelPCLoader, { ObjectSpinner } from "../Voxel3d-Loader";
 import Footer from "./Footer";
 import React from "react";
 import { __prod } from "../../../constants";
@@ -44,7 +45,9 @@ const Main: React.FC<{
 
       <NavBar path={router.asPath} />
       <Container maxW="container.md" pt={16}>
-        {__prod && <LazyVoxelPC />}
+        {__prod && 
+            <LazyVoxelPC />
+        }
         {children}
 
         <Footer />

@@ -40,7 +40,7 @@ const data = {
         linktree: "https://linktr.ee/amarjay",
         medium: "https://amanann.medium.com",
         goodread: "https://links.themanan.me/goodread",
-        spotify: "https://open.spotify.com/playlist/04svBjcoYd5Ou6q2h47sBR",
+        spotify: "https://open.spotify.com/playlist/1S8GsOVNZEa9ueH2StgH5c?si=c297490926ad4abf",
         movies: "https://links.themanan.me/movies",
     }
     }
@@ -63,7 +63,7 @@ const Home: NextPage = () => {
           textAlign="center"
         >
           <Image
-            borderColor={useColorModeValue("purple.700", "#395B64")}
+            borderColor={"purple.700"}
             borderWidth={3}
             borderStyle="solid"
             width="175px"

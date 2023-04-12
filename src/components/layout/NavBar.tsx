@@ -20,6 +20,28 @@ import Logo from "../Logo";
 import ThemeToggleButton from "../Theme-Toggle-Button";
 import { colors } from "../../../libs/theme";
 
+interface Item {
+    name: string;
+    href: string;
+}
+const items: Item[] = [
+{
+    name: "Profile",
+    href: "/"
+},
+{
+    name: "Projects",
+    href: "/projects"
+},
+{
+    name: "Blog",
+    href: "https://blog.themanan.me/blog"
+},
+{
+    name: "About",
+    href: "https://linktr.ee/amarjay"
+},
+]
 const NavBar: React.FC<{ path: string;[prop: string]: string | number }> = (
   props
 ) => {
@@ -61,23 +83,13 @@ const NavBar: React.FC<{ path: string;[prop: string]: string | number }> = (
           mt={{ base: 4, md: 0 }}
           alignItems="center"
         >
-          <LinkItem href={"/"} path={path} passHref>
-            Profile
+        {
+            items.slice(0, items.length-1).map(({name, href}: Item) => (
+          <LinkItem href={href} path={path} passHref>
+          {name}
           </LinkItem>
-          <LinkItem href={"/projects"} path={path} passHref>
-            Projects
-          </LinkItem>
-	{/*
-          <LinkItem href={"https://themanan.me"} path={path} passHref>
-            Socials
-          </LinkItem>
-	*/}
-          <LinkItem href={"https://blog.themanan.me/blog"} path={path} passHref>
-            Blog
-          </LinkItem>
-          <LinkItem href={"/contact-info"} path={path} passHref>
-            About 
-          </LinkItem>
+            ))
+        }
         </Stack>
 
         <Box
@@ -102,49 +114,22 @@ const NavBar: React.FC<{ path: string;[prop: string]: string | number }> = (
                 aria-label="Outline"
               />
               <MenuList p={"6px"}>
-                <MenuItem borderRadius={"10px"} padding={0}>
-                  <LinkItem
-                    height={"full"}
-                    width={"full"}
-                    href={"/"}
-                    path={path}
-                    passHref
-                  >
-                    Profile
-                  </LinkItem>
-                </MenuItem>
-                <MenuItem borderRadius={"10px"} padding={0}>
-                  <LinkItem
-                    height={"full"}
-                    width={"full"}
-                    href="/projects"
-                    path={path}
-                    passHref
-                  >
-                    Projects
-                  </LinkItem>
-                </MenuItem>
-                <MenuItem borderRadius={"10px"} padding={0}>
-                  <LinkItem
-                    href={"https://blog.themanan.me"}
-                    path={path}
-                    height={"full"}
-                    width={"full"}
-                  >
-                    Blog
-                  </LinkItem>
-                </MenuItem>
-                <MenuItem>
-                  <LinkItem
-                    href={"https://github.com/amar-jay"}
-                    path={path}
-                    height={"full"}
-                    width={"full"}
-                  >
-                    Github
-                  </LinkItem>
-                </MenuItem>
 
+        {
+            items.map(({name, href}: Item) => (
+              <MenuItem href={href} path={path} passHref>
+                  <LinkItem
+                    height={"full"}
+                    width={"full"}
+                    href={href}
+                    path={path}
+                    passHref
+                  >
+                   {name} 
+                  </LinkItem>
+              </MenuItem>
+            ))
+        }
               </MenuList>
             </Menu>
           </Box>

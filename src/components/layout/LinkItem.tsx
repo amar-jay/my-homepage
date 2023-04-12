@@ -16,16 +16,16 @@ const LinkItem: React.FC<{
     <NextLink href={href} passHref={passHref}>
       <Link
         {...props}
-        paddingY={4}
-        paddingX={4}
-        m={0.5}
+        paddingY={3}
+        paddingX={3}
+        m={5}
         //color={active ? activeColor : inactiveColor}
         fontWeight={active ? "bold" : "normal"}
         borderRadius="lg"
         transition="all 0.2s ease-in-out"
         _hover={{
           textDecoration: "none",
-          backgroundColor: "blackAlpha.300",
+//          backgroundColor: "blackAlpha.300",
         }}
       >
         {children}
