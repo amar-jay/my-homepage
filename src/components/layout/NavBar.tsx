@@ -117,7 +117,7 @@ const NavBar: React.FC<{ path: string;[prop: string]: string | number }> = (
 
         {
             items.map(({name, href}: Item) => (
-              <MenuItem key={name} href={href} path={path} passHref>
+              <MenuItem key={name} ref={href} path={path} passHref>
                   <LinkItem
                     height={"full"}
                     width={"full"}
