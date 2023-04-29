@@ -35,7 +35,7 @@ const Logos: React.FC = () => {
             width="30px"
             padding="10px 10px 10px 10px"
           >
-            <NextImage src={Img} alt="" fill />
+            <NextImage src={Img} alt="logo" layout="fill" />
           </Box>
           <Text
             color={useColorModeValue("purple.700", "purple.300")}

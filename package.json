@@ -18,7 +18,7 @@
     "@vitalets/google-translate-api": "^8.0.0",
     "formik": "^2.2.9",
     "framer-motion": "^6.3.11",
-    "next": "^12.9.0",
+    "next": "^12.3.4",
     "next-sanity": "^0.6.0",
     "openai": "^3.0.0",
     "react": "18.2.0",
