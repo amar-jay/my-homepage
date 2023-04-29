@@ -18,10 +18,11 @@ const LogoBox = styled.div`
   }
 `;
 const Logos: React.FC = () => {
-  const FootPrintImg = `/images/bulb${useColorModeValue(
-    "-light",
-    "-dark"
-  )}.svg`;
+  const Img = `/images/bulb-dark.svg`
+  // ${useColorModeValue(
+  //   "-light",
+  //   "-dark"
+  // )}.svg`;
   return (
     <Link href="/">
         <LogoBox>
@@ -34,7 +35,7 @@ const Logos: React.FC = () => {
             width="30px"
             padding="10px 10px 10px 10px"
           >
-            <NextImage src={FootPrintImg} alt="" layout="fill" />
+            <NextImage src={Img} alt="" fill />
           </Box>
           <Text
             color={useColorModeValue("purple.700", "purple.300")}

@@ -45,9 +45,11 @@ const Main: React.FC<{
 
       <NavBar path={router.asPath} />
       <Container maxW="container.md" pt={16}>
+        <Suspense fallback={<ObjectSpinner />}>
         {__prod && 
             <LazyVoxelPC />
-        }
+         } 
+         </Suspense>
         {children}
 
         <Footer />
