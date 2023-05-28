@@ -10,8 +10,16 @@ if (typeof window !== "undefined") {
 }
 
 function MyApp({ Component, pageProps, router }: AppProps) {
+  const [cookie, setCookie] = useState<any>(null);
+  useEffect(
+    () => {
+    if (pageProps?.cookie)
+      setCookie(pageProps.cookie)
+    },
+  [pageProps]
+  );
   return (
-    <Chakra cookies={pageProps?.cookies || {}}>
+    <Chakra cookies={cookie as any}>
       <MainLayout router={router}>
         <AnimatePresence
           exitBeforeEnter
