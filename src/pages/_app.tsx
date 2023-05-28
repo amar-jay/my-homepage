@@ -14,8 +14,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   const [cookie, setCookie] = useState<any>(null);
   useEffect(
     () => {
-    if (pageProps?.cookie)
-      setCookie(pageProps.cookie)
+      if (pageProps) {
+        if (pageProps?.cookie)
+          setCookie(pageProps.cookie)
+      }
     },
   [pageProps]
   );
