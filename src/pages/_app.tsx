@@ -12,6 +12,7 @@ if (typeof window !== "undefined") {
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const [cookie, setCookie] = useState<any>(null);
+  let pageProps = pageProps as any;
   useEffect(
     () => {
       if (pageProps) {
