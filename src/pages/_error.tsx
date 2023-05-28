@@ -1,7 +1,6 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import Section from "../components/SectionMotion";
-
-export default () => {
+const errorPage = () => {
   return (
     <Section delay="0.2s">
       <Flex alignItems="center"></Flex>
@@ -9,3 +8,5 @@ export default () => {
     </Section>
   );
 }
+
+export default errorPage;
