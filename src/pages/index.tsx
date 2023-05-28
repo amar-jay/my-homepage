@@ -40,7 +40,7 @@ const data = {
         linktree: "https://linktr.ee/amarjay",
         medium: "https://amanann.medium.com",
         goodread: "https://links.themanan.me/goodread",
-        spotify: "https://open.spotify.com/playlist/04svBjcoYd5Ou6q2h47sBR",
+        spotify: "https://links.themanan.me/spotify",
         movies: "https://links.themanan.me/movies",
     }
     }
