@@ -5,13 +5,13 @@ import MainLayout from "../components/layout/Main";
 import Chakra from "../components/chakra";
 import { AnimatePresence } from "framer-motion";
 
-if (typeof window !== 'undefined') {
-  window.history.scrollRestoration = 'manual'
+if (typeof window !== "undefined") {
+  window.history.scrollRestoration = "manual";
 }
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <Chakra cookies={pageProps.cookies}>
+    <Chakra cookies={pageProps?.cookies || {}}>
       <MainLayout router={router}>
         <AnimatePresence
           exitBeforeEnter
