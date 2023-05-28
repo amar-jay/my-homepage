@@ -12,15 +12,15 @@ if (typeof window !== "undefined") {
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const [cookie, setCookie] = useState<any>(null);
-  let pageProps = pageProps as any;
+  let p:any = pageProps as any;
   useEffect(
     () => {
-      if (pageProps) {
-        if (pageProps?.cookie)
-          setCookie(pageProps.cookie)
+      if (p) {
+        if (p?.cookie)
+          setCookie(p.cookie)
       }
     },
-  [pageProps]
+  [pageProps, p]
   );
   return (
     <Chakra cookies={cookie as any}>
