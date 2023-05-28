@@ -1,7 +1,7 @@
 
 import { Flex, Heading } from "@chakra-ui/react";
 import Section from "../components/SectionMotion";
-function _404() {
+function errors() {
   return (
     <Section delay="0.2s">
       <Flex alignItems="center">error</Flex>
@@ -10,4 +10,4 @@ function _404() {
   );
 }
 
-export default _404;
+export default errors;
